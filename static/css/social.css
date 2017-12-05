@@ -1,0 +1,63 @@
+.social-right {
+	position: absolute;
+	top: 0;
+	right: 20px;
+	text-align: center;
+}
+.social-right li {
+   list-style-type: none;
+   margin: 40px 15px;
+   }
+.social-right ul {
+    margin-left: 0; 
+    padding-left: 0;
+ }
+ .social-right li img {
+ 	display: inline-block;
+ }
+
+
+@media screen and (max-width:1400px) {
+	.social-right li img {
+ 		width: 20px;
+ 		height: 20px;
+ }
+ .social-right li img.fb-icon {
+ 	height: 25px;
+ 	width: 15px;
+ }
+}
+
+@media screen and (max-width:1024px) {
+	.social-right li img {
+ 		width: 15px;
+ 		height: 15px;
+ 	}
+	 .social-right li img.fb-icon {
+	 	height: 20px;
+	 	width: 10px;
+	 }
+	 .social-right li {
+	 	margin: 20px 10px;
+	 }
+}
+
+@media screen and (max-width:768px) {
+	.social-right li img {
+ 		width: 10px;
+ 		height: 10px;
+ 	}
+	 .social-right li img.fb-icon {
+	 	height: 15px;
+	 	width: 8px;
+	 }
+	 .social-right li {
+	 	margin: 15px 10px;
+	 }
+}
+
+@media screen and (max-width:480px) {
+	.social-right li {
+		margin: 2px;
+	}
+}

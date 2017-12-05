@@ -1,0 +1,36 @@
+Fri Dec 11 06:52:01 2015 - *** Starting uWSGI 1.9.17.1-debian (64bit) on [Fri Dec 11 06:52:01 2015] ***
+Fri Dec 11 06:52:01 2015 - compiled with version: 4.8.2 on 23 March 2014 17:15:32
+Fri Dec 11 06:52:01 2015 - os: Linux-3.13.0-57-generic #95-Ubuntu SMP Fri Jun 19 09:28:15 UTC 2015
+Fri Dec 11 06:52:01 2015 - nodename: Pro-Essay-Writer
+Fri Dec 11 06:52:01 2015 - machine: x86_64
+Fri Dec 11 06:52:01 2015 - clock source: unix
+Fri Dec 11 06:52:01 2015 - pcre jit disabled
+Fri Dec 11 06:52:01 2015 - detected number of CPU cores: 1
+Fri Dec 11 06:52:01 2015 - current working directory: /
+Fri Dec 11 06:52:01 2015 - detected binary path: /usr/bin/uwsgi-core
+Fri Dec 11 06:52:01 2015 - your processes number limit is 3750
+Fri Dec 11 06:52:01 2015 - your memory page size is 4096 bytes
+Fri Dec 11 06:52:01 2015 - detected max file descriptor number: 1024
+Fri Dec 11 06:52:01 2015 - lock engine: pthread robust mutexes
+Fri Dec 11 06:52:01 2015 - thunder lock: disabled (you can enable it with --thunder-lock)
+Fri Dec 11 06:52:01 2015 - uwsgi socket 0 inherited UNIX address /run/uwsgi/app/flask/socket fd 9
+Fri Dec 11 06:52:01 2015 - uwsgi socket 1 inherited UNIX address /tmp/flask.sock fd 10
+Fri Dec 11 06:52:01 2015 - Python version: 2.7.6 (default, Jun 22 2015, 18:01:27)  [GCC 4.8.2]
+Fri Dec 11 06:52:01 2015 - Set PythonHome to /home/proessaywritercom/
+Fri Dec 11 06:52:01 2015 - Python main interpreter initialized at 0xbdd900
+Fri Dec 11 06:52:01 2015 - python threads support enabled
+Fri Dec 11 06:52:01 2015 - your server socket listen backlog is limited to 100 connections
+Fri Dec 11 06:52:01 2015 - your mercy for graceful operations on workers is 60 seconds
+Fri Dec 11 06:52:01 2015 - mapped 331488 bytes (323 KB) for 10 cores
+Fri Dec 11 06:52:01 2015 - *** Operational MODE: threaded ***
+Fri Dec 11 06:52:01 2015 - added /home/proessaywritercom/app/ to pythonpath.
+Fri Dec 11 06:52:02 2015 - WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xbdd900 pid: 1132 (default app)
+Fri Dec 11 06:52:02 2015 - *** uWSGI is running in multiple interpreter mode ***
+Fri Dec 11 06:52:02 2015 - gracefully (RE)spawned uWSGI master process (pid: 1132)
+Fri Dec 11 06:52:02 2015 - spawned uWSGI worker 1 (pid: 10719, cores: 10)
+Fri Dec 11 13:55:48 2015 - uwsgi_response_write_headers_do(): Broken pipe [core/writer.c line 216]
+IOError: write error
+Fri Dec 11 13:57:53 2015 - uwsgi_response_write_headers_do(): Broken pipe [core/writer.c line 216]
+IOError: write error
+Fri Dec 11 14:02:19 2015 - uwsgi_response_write_headers_do(): Broken pipe [core/writer.c line 216]
+IOError: write error

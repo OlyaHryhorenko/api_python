@@ -1,0 +1,187 @@
+
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/css/dashboard.css?v=1">
+	<div class="bb-alert alert alert-info alert-dismissible" style="display: none;">
+        <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+        <span class="al_center">Info</span>
+    </div>
+    <div class="bb-alert-success alert alert-success alert-dismissible" style="display: none;">
+        <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+        <span class="al_center">Success</span>
+    </div>
+    <div class="bb-alert-warning alert alert-warning alert-dismissible" style="display: none;">
+        <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+        <span class="al_center">Warning</span>
+    </div>
+    <div class="bb-alert-danger alert alert-danger alert-dismissible" style="display: none;">
+        <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+        <span class="al_center">Danger</span>
+    </div>
+
+<div id="dashboard">
+	<h1>My settings</h1>
+	<div class="cabinet__status"></div>
+		<div class="dash-container">
+			<div class="dash-sidebar">
+		        <ul>
+		        	<li>
+		        		<a href="/order" class="three-d">
+							<i class="dash-icon flaticon-I"></i>NEW ORDER
+							<span aria-hidden="true" class="three-d-box">
+								<span class="front"><i class="dash-icon flaticon-I"></i>NEW ORDER</span>
+								<span class="back"><i class="dash-icon flaticon-I"></i>NEW ORDER</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/dashboard" class="three-d">
+							<i class="dash-icon flaticon-C"></i>MY ORDERS
+							<span aria-hidden="true" class="three-d-box">
+								<span class="front"><i class="dash-icon flaticon-C"></i>MY ORDERS</span>
+								<span class="back"><i class="dash-icon flaticon-C"></i>MY ORDERS</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/transactions" class="three-d">
+							<i class="dash-icon flaticon-H"></i>TRANSACTIONS
+							<span aria-hidden="true" class="three-d-box">
+								<span class="front"><i class="dash-icon flaticon-H"></i>TRANSACTIONS</span>
+								<span class="back"><i class="dash-icon flaticon-H"></i>TRANSACTIONS</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/profile" class="three-d active">
+							<i class="dash-icon flaticon-G"></i>MY SETTINGS
+							<span aria-hidden="true" class="three-d-box">
+								<span class="front"><i class="dash-icon flaticon-G"></i>MY SETTINGS</span>
+								<span class="back"><i class="dash-icon flaticon-G"></i>MY SETTINGS</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/logout" class="three-d">
+							<i class="dash-icon flaticon-F"></i>LOGOUT
+							<span aria-hidden="true" class="three-d-box">
+								<span class="front"><i class="dash-icon flaticon-F"></i>LOGOUT</span>
+								<span class="back"><i class="dash-icon flaticon-F"></i>LOGOUT</span>
+							</span>
+						</a>
+					</li>
+		        </ul>
+		    </div>
+			<div class="dash-content float-content">
+				<form class="dash-form" action="/add.php">
+					{% for customer in customer %}
+						<div class="dash-header">account info</div>
+						<div class="dash-form-group">
+							<label>
+								Email 
+								<input type="email" autocomplete="off" id="email_customer" name="email" maxlength="100" value="{{customer.email}}" class="email_cust dash-input">
+								<input type="hidden" name="email_customer" class="form-control" value="{{customer.email}}">
+							</label>
+						</div>
+						<div class="dash-form-group">
+							<label>
+								Name
+								<input type="text" autocomplete="off" id="name" maxlength="50" placeholder="{{customer.first_name}}" name="name" class="dash-input">
+							</label>
+						</div>
+						<div class="dash-form-group">
+							<label>
+								Phone
+								<input type="text" name="phone" maxlength="14" minlength="10" id="phone_numb" class="dash-input" placeholder="Please, enter your phone" value="{{customer.phone}}">
+							</label>
+						</div>
+						<div class="dash-list-letter">
+							<p>I want to receive newsletters and special offer notices from {{site_short}}</p>
+							<div class="dash-button-switch" id="dash-switch" data-val="{{customer.newsletters}}">
+								<span>off</span>
+								<span class="dash-switch-bg"></span>
+								<span>on</span>
+							</div>
+							<input type="hidden" name="newsletters" value="{{customer.newsletters}}" id="newsletters">
+						</div>
+						<div class="dash-form-group">
+							<button class="dash-button-setting upd_prf" id="setting-option"><i class="dash-icon flaticon-B"></i>UPDATE PROFILE</button>
+						</div>
+						<!--div class="row">
+							<a class="not-active btn btn-orange btn-orange-lg" id="upd_prf">Update profile</a>
+						</div-->
+					{% endfor %}
+				</form>
+				<div class="dash-line"></div>
+				<form class="dash-form" action="/add.php">
+					<div class="dash-header">
+						CHANGE PASSWORD
+					</div>
+					<div class="dash-form-group">
+						<label>
+							Old password 
+							<input type="password" name="oldpassword" id="oldpassword" placeholder="Please, enter old password" autocomplete="off" maxlength="18" class="dash-input">
+						</label>
+					</div>
+					<div class="dash-form-group">
+						<label>
+							New password  
+							<input type="password" placeholder="Please, enter new password" name="newpassword" id="newpassword" autocomplete="off" maxlength="18" class="dash-input">
+						</label>
+					</div>
+					<div class="dash-form-group">
+						<label>
+							Confirm
+							<input type="password" name="cnewpassword" placeholder="Please, confirm password" autocomplete="off" maxlength="18" class="dash-input" id="cnewpassword">
+						</label>
+					</div>
+					<div class="dash-form-group" style="padding-top: 20px;">
+						<button class="dash-button-setting" id="change-password"><i class="dash-icon flaticon-B"></i>UPDATE PROFILE</button>
+					</div>
+				</form>
+			</div>
+		</div>
+</div>
+<script src="static/js/jquery.1.9.1.js"></script>
+<script src="static/js/jquery.carouselHeight.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/legacy.min.js"></script>
+<script src="static/js/custombox.min.js"></script>
+<script src="static/js/moment.js"></script>
+<script src="static/js/bootstrap-datetimepicker.js"></script>
+<script src="static/js/jquery.form.js"></script>
+<script src="static/js/url.min.js"></script>
+<script src="static/js/calc.js"></script>
+<script src="static/js/order_scripts.js"></script>
+<script src="static/js/app.js"></script>
+<script src="static/js/bootbox.min.js"></script>
+<script src="static/js/utils.js"></script>
+<script src="static/js/media-paragraph.js"></script>
+<script src="static/js/zopim.js"></script>
+
+<script type="text/javascript">
+	$('#dash-switch').click(function() {
+		if($(this).attr('data-val') == '1') {
+			$(this).attr('data-val', 0);
+			$('#newsletters').val(0);
+			return false;
+		}else{
+			$(this).attr('data-val', 1);
+			$('#newsletters').val(1);
+		}
+	});
+	$(".upd_prf").click( function(e){
+		e.preventDefault();
+		aprofileupdate($(this));
+	});
+	$('#change-password').click(function(e) {
+		e.preventDefault();
+		apasswordupdate($(this));
+	});
+	$('#phone_numb').on('keyup', function(event) {
+        var str = $(this).val(),
+            reg = /[^0-9]/g;
+        str = str.replace(reg, '');
+        $(this).val('+'+str);
+    });
+</script>

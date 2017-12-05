@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'noteworthybold';
+    src: url('noteworthy-bold-webfont.woff2') format('woff2'),
+         url('noteworthy-bold-webfont.woff') format('woff'),
+         url('noteworthy-bold-webfont.svg#noteworthybold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Glyphter';
+    src: url('../fonts/Glyphter.eot');
+    src: url('../fonts/Glyphter.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Glyphter.woff') format('woff'),
+         url('../fonts/Glyphter.ttf') format('truetype'),
+         url('../fonts/Glyphter.svg#Glyphter') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

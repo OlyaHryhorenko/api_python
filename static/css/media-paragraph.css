@@ -1,0 +1,50 @@
+.seo--index-bg-22 h2 p,
+ .seo--index-bg-222 h2 p,
+ .seo--index-bg-2 h2 p,
+ .seo--index-bg-222 h2 p {
+     position: relative;
+     display: block;
+ }
+.seo--index-bg-22{
+    color:#fff;
+}
+.seo--index-bg-22 i,
+.seo--index-bg-222 i,
+.seo--index-bg-2 i,
+.seo--index-bg-222 i {
+    /* bottom: 0; */
+    /* position: absolute; */
+    /* right: 0; */
+    /* display: none; */
+}
+
+/* @media(max-width:767px) and (min-width: 320px){
+    .seo--index-bg-22  p,
+    .seo--index-bg-222  p,
+    .seo--index-bg-2  p,
+    .seo--index-bg-222  p {
+
+        display: none;
+    }
+    .seo--index-bg-22 i,
+    .seo--index-bg-222 i,
+    .seo--index-bg-2 i,
+    .seo--index-bg-222 i {
+
+    }
+
+} */
+
+/*active link on navbar*/
+@media only screen and (min-width: 768px){
+    .navbar-default .navbar-nav > li >a.current-page {
+        border-bottom: 2px solid #00585f;
+    }
+}
+
+/*fixed header*/
+.header__top{
+    position: fixed;
+    top:0;
+    z-index: 150;
+}

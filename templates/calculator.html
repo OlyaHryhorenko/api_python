@@ -1,0 +1,67 @@
+<form action="/order" method="POST" class="calc1ContantWrapper">
+    <div class="calc1Wrapper">
+      <div class="calc1Row flex input-part">
+        <p class="calc1PartLeft">Type of  paper needed: <span class="calc1-circle"></span></p>
+        <div class="calc1PartRight arrow">
+			<div>
+			<select name="paperType" id="calc1Essay">
+              	<option value="1">Essay</option>
+                <option value="2">Coursework</option>
+                <option value="3">Term Paper</option>
+                <option value="4">Research Paper</option>
+                <option value="5">Book Report</option>
+                <option value="6">Movie Review</option>
+                <option value="7">Case Study</option>
+                <option value="8">Annotated Bibliography</option>
+                <option value="9">Article</option>
+                <option value="10">Assignment</option>
+                <option value="11">Dissertation</option>
+                <option value="12">Lab Report</option>
+                <option value="13">Math Problem</option>
+                <option value="14">Presentations</option>
+                <option value="15">Speech</option>
+                <option value="16">Statistics Report</option>
+                <option value="17">Power Point Presentation</option>
+          	</select>
+		</div>
+        </div>
+      </div>
+      <div class="calc1Row flex input-part">
+        <p class="calc1PartLeft">Pages: <span class="calc1-circle"></span></p>
+        <div class="calc1PartRight">
+          <button id="calc1Increase" onClick="return false;">&#8722;</button>
+          <input type="text" id="pagesLength" name="pages" value="1" data-max="999" data-min="1" maxlength="3">
+          <button id="calc1Decrease" onClick="return false;">&#x2b;</button>
+        </div>
+      </div>
+      <div class="calc1Row flex input-part">
+        <p class="calc1PartLeft">Academic level: <span class="calc1-circle"></span></p>
+        <div class="calc1PartRight arrow">
+          <select name="academicLevel" id="calc1AcadLevel">
+            <option value="1">High school</option>
+            <option value="2">College</option>
+            <option value="3">University</option>
+            <option value="4">Master`s</option>
+            <option value="5">Ph.D.</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc1Row flex input-part">
+        <p class="calc1PartLeft">Deadline: <span class="calc1-circle"></span></p>
+        <div class="calc1PartRight">
+          <input type="text" id="calc1Calendar" name="deadline" style="cursor: default;">
+			<i class="date i"><img src="static/img/icons/date-img.png" alt=""></i>
+        </div>
+      </div>
+      <div class="calc1Row input-part total-price">
+        <p class="calc1PartLeft calc1Price">Total price: <span class="calc1-circle calc1-big-circle"></span></p>
+        <div class="calc1PartRight calc1TotalPrice">
+          <p id="totalPrice">$ <i>0</i> </p>
+        </div>
+      </div>
+		<div class="input-part">
+			 <button class="calc1Continue" id="calc1Continue">CONTINUE</button>
+		</div>
+    </div>
+  </form>
+

@@ -1,0 +1,50 @@
+
+#global-modal .modal-footer {
+padding: 0;
+}
+
+#global-modal input {
+        width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border: 1px solid #fff;
+    background: transparent;
+    margin-bottom: 20px;
+    border: 1px solid rgba(175, 164, 164, 0.6);
+}
+.modal-header {
+    text-transform: uppercase;
+    text-align: center;
+    color: #a9a7a0;
+    font-size: 2em;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+ .error {
+display: none;
+}
+#global-modal button#log-in-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    color: #fff;
+    margin-right: auto;
+    background-color: #a9a7a0;
+    border: none;
+    padding: 20px 0;
+    font-size: 22px;
+    line-height: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+#global-modal .forgot {
+color: #a9a7a0;
+text-align: left;
+padding-top: 5px;
+}
+#global-modal .forgot a {
+text-decoration: underline;
+}

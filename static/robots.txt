@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /fonts/
+Disallow: /templates/
+Disallow: /docs/
+Disallow: /disclaimer.html
+Disallow: /discounts.html
+Disallow: /money-back-guarantee.html
+Disallow: /terms.html
+Disallow: /privacy.html
+
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+Sitemap: https://essaysdigital.com/sitemap.xml

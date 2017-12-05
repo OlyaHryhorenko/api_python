@@ -1,0 +1,33 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/moment.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/modal.css">
+</head>
+<body>
+<div id="global-modal" class="container">
+	<div class="modal-window" class="col-md-12">
+		<form action="https://api.bryteq.com/alogin" method="POST">
+			<input type="hidden" id="site_id" name="site_id">
+			<div class="modal-header">log into your account</div>
+			<input type="email" name="email" autocomplete="off" placeholder="Email" required="required" id="remail">
+			<input type="password" name="password" autocomplete="off" placeholder="Password" required="required" id="rpassword">
+			<div class="modal-footer">
+				<p class="error" style="font-weight:400; text-transform:none; font-family: 'Open Sans', sans-serif;">Unrecognized username or password.</p>
+				<button id="log-in-button">sign in</button>
+				<div class="forgot">
+					Forgot your password?
+					<a href="/forgot" class="forgot">Reset it here.</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+
+
+<script src="/static/js/utils.js"></script>
+</body>
+</html>

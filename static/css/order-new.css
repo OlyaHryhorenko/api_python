@@ -1,0 +1,727 @@
+
+
+.ord-first-screen {
+	background-image: url(../img/order-img.png);
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	padding: 30px 10px;
+}
+
+.ord-frst-cont {
+
+	padding-bottom: 80px; 
+}
+.ord-frst-cont h1 {
+	font-size: 55pt;
+	margin: 10px;
+}
+
+.mist {
+	display: inline-block;
+	width: 27%;
+	margin: 0 auto;
+}
+
+fieldset  {
+	width: 100%;
+	border: 0;
+}
+
+.form-part {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+#paper label {
+	width: 100%;
+	text-align: left;
+	font-size: 14pt;
+	padding-top: 10px;
+	display: block;
+}
+
+#paper input:active, #paper input:hover, #paper input:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+#paper input,
+#paper textarea {
+	width: 100%;
+	border: none;
+	border: none;
+	background: none;
+	border-bottom:1px solid #ffffff;
+	height: 45px;
+	font-size:1em;
+	padding-left: 10px;
+	outline: 0;
+  outline-offset: 0;
+}
+#paper textarea {
+	height: 120px;
+}
+
+#level-button,
+#type-button,
+#format-button,
+#paper-type-button,
+#subject-button {
+	width:100%;
+	border: 0;
+	border-bottom: 1px solid #c9c9c9;
+	outline: 0;
+  outline-offset: 0;
+  height: 30px;
+	padding-top: 10px;
+	background:none;
+}
+
+
+#conditions {
+	font-size: 14pt;
+}
+
+
+.spinner-cont {
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+
+.pg-spinner,
+.sources-spinner {
+	width: 45%;
+	display: inline-block;
+}
+
+.pg-spinner p,
+.sources-spinner p,
+.pg-spinner span {
+	display: inline-block;
+}
+
+.pg-spinner input,
+.sources-spinner input {
+	width: 60%;
+	display: inline-block;
+	height: 45px;
+	border: 1px solid #ffffff;
+	background: none;
+	text-align: center;
+	outline: 0;
+  outline-offset: 0;
+  float: left;
+}
+.number {
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+}
+.pg-spinner span,
+.sources-spinner span {
+	display: inline-block;
+	width: 20%;
+	position: absolute;
+	height: 20px;
+}
+
+.sources-spinner,
+.pg-spinner {
+	text-align: left;
+}
+
+
+span.plus {
+	top: 0;
+	right: 15%;
+}
+
+span.minus {
+	bottom: 0;
+	right: 15%;
+}
+
+p.cunt-sp {
+	padding-left: 10%;
+}
+
+.spacing {
+	text-align: left;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.spacing-cont label {
+	border: 1px solid #ffffff;
+	font-size: 11pt;
+	padding: 12px 5px;
+	width: 30%;
+	display: inline-block;
+	position: relative;
+	height: 45px;
+	vertical-align: middle;
+}
+.double-lab {
+	margin-left: 20%;
+}
+.spacing-cont input {
+	display: none;
+}
+
+.spacing-cont i {
+	width: 20%;
+	height: 45px;
+	display: inline-block;
+	text-align: center;
+	opacity: 0.2;
+}
+
+.spacing-cont input + i{
+	position: absolute;
+	right: -40px;
+	top: -1px;
+}
+
+.spacing-cont input:checked + i {
+	opacity: 1;
+}
+.spacing-cont i img {
+	margin-top: 10px;
+}
+.mat-line {
+	width: 90%;
+	margin: 20px auto;
+	text-align: left;
+}
+
+.materials {
+	font-size: 14pt;
+	width: 50%;
+	float: left;
+}
+.materials label,
+.deadline label {
+	font-size: 11pt;
+	padding: 12px 5px;
+	width: 60%;
+	display: inline-block;
+	position: relative;
+	height: 45px;
+	background: #ffffff;
+	color: #636363;
+	border: 0;
+}
+
+.materials input + i {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	right: -40px;
+}
+.materials i img {
+	margin-top: 12px;
+}
+.deadline i img {
+	margin-top: 8px;
+}
+.materials i,
+.deadline i {
+	width: 20%;
+	height: 46px;
+	display: inline-block;
+	text-align: center;
+}
+
+.deadline {
+	width: 50%;
+	display: inline-block;
+}
+.deadline input:focus, .deadline input:hover {
+	  outline: 0;
+    outline-offset: 0;
+}
+
+.deadline input {
+	width: 95%;
+	font-size: 11pt;
+	padding: 12px 5px;
+	border: 0;
+	box-shadow: none;
+	height: 21px;
+}
+.deadline i {
+	position: absolute;
+	right: -40px;
+	top: 0px;
+}
+
+.discount {
+	width: 90%;
+	text-align: left;
+	font-size:14pt;
+	margin-top: 35px;
+	margin: 0 auto;
+}
+
+.discount label {
+	font-size: 11pt;
+	padding: 12px 5px;
+	width: 80%;
+	display: inline-block;
+	position: relative;	
+	background: #ffffff;
+	height: 45px;
+	color: #636363;
+}
+
+.discount input {
+	display: none;
+}
+
+.discount i {
+	width: 10%;
+	height: 45px;
+	display: inline-block;
+	text-align: center;
+}
+
+.discount input + i{
+	position: absolute;
+	right: -15%;
+	top: 0px;
+	opacity: 0.2;
+}
+.discount input:checked + i {
+	opacity: 1;
+}
+.discount i img {
+	margin-top: 10px;
+}
+
+.total-price {
+	width: 90%;
+	margin: 60px auto 0 auto;
+	text-align: center;
+	font-size: 28pt;
+	padding: 20px 0;
+}
+
+.total-price span {
+	display: block;
+}
+
+.total-date {
+	font-size: 12pt;
+	padding: 10px 0;
+}
+
+
+
+
+.sec-screen-con {
+	position: relative;
+}
+.sec-screen-con img {
+	width: 18%;
+	margin: 20px auto;
+	position: absolute;
+	bottom: 25px;
+}
+
+.first-img {
+	left: 16%;;
+}
+.second-img {
+	right: 16%;
+}
+.reg-part {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.sec-screen-con h2 {
+	font-size: 22pt;
+	margin-top: 50px;
+}
+#login .reg-part {
+	width: 88%;
+	margin: 20px auto;
+}
+.static {
+	position: static;
+}
+#reg {
+	padding-bottom: 70px;
+}
+
+#login h2 {
+	margin-bottom: 150px;
+}
+
+
+#reg label,
+#login label {
+	display: inline-block;
+	width: 40%;
+	float: left;
+	text-align: right;
+	padding-right: 20px;
+	padding-top: 10px;
+	font-size: 14pt;
+}
+
+#reg input,
+#login input {
+	width: 60%;
+	display: inline-block;
+	height: 45px;
+	background: none;
+	border: none;
+	border-bottom: 2px solid #8d9397;
+	color: #8d9397;
+	font-size: 15px;
+}
+
+#reg input:active, #reg input:hover, #reg input:focus,
+#login input:active, #login input:hover, #login input:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+
+.accept {
+	width: 88%;
+	margin: 0 auto;
+	overflow: hidden;
+	margin: 40px 40px 80px 40px;
+
+
+
+}
+
+.accept label#accept-lab {
+	width: 100%;
+	text-align: left;
+	font-size: 12pt;
+}
+.accept input#accept {
+	width: 3%;
+	float: left;
+	padding-bottom: 50px;
+	height: 20px;
+	margin-right: 5%;
+	margin-bottom: 5%;
+} 
+
+
+#reg input#submit,
+#login input#submit {
+	width: 35%;
+	margin: 10px auto;
+	border: 0;
+	font-size: 22pt;
+	transition: 0.3s;
+	-o-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-icab-transition: 0.3s;
+	position: absolute;
+	bottom: -50px;
+	z-index: 100%;
+}
+#reg input#submit {
+	left: 7.5%;
+}
+#login input#submit {
+	right: 7.5%;
+}
+
+.bot-img {
+	display: block;
+	margin: 80px auto 30px auto;
+	width: 50%;
+}
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+	.ord-frst-cont h1 {
+		font-size: 45pt;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.ord-frst-cont {
+		padding-bottom: 50px;
+	}
+	.ord-frst-cont h1 {
+		font-size: 40pt;
+	}
+	.spacing-cont input + i,
+	.materials input + i,
+	.deadline i {
+		right: -60px;
+	}
+	.total-price {
+		width: 75%;
+	}
+
+	#reg label, #login label {
+		width: 30%;
+		text-align: left;
+	}
+	#reg input, #login input {
+		width: 70%;
+	}
+	#reg input#submit, #login input#submit {
+		width: 40%;
+		position: static;
+		margin:10px auto;
+	}
+	.sec-screen-con img {
+		position: static;
+		width: 30%;
+		margin: 20px auto;
+		display: block;
+	}
+	#login h2 {
+		margin-bottom: 70px;
+	}
+	.sec-screen-con img.second-img {
+		margin-top: 50px;
+	}
+	.bot-img {
+		margin-top: 40px;
+	}
+	#login .reg-part {
+		width: 100%;
+	}
+}	
+
+@media screen and (max-width: 768px) {
+	.ord-frst-cont {
+		padding-bottom: 30px;
+	}
+	.ord-frst-cont h1 {
+		font-size: 35pt;
+	}
+	.form-part {
+		width: 75%;
+		margin: 0 auto;
+	}
+	
+	#paper label {
+		font-size: 12pt;
+	}
+	#conditions {
+		margin-top: 30px;
+	}
+	#conditions ,
+	.materials p,
+	.discount p {
+		font-size: 12pt;
+	}
+	#conditions p {
+		margin: 5px 0;
+	}
+	.total-price {
+		margin-top: 30px;
+	}
+	span#tot_price {
+		font-size: 22pt;
+	}
+	.total-date {
+		font-size: 10pt;
+	}
+	#reg label, #login label {
+		text-align: center;
+		font-size: 12pt;
+	}
+	.sec-screen-con h2 {
+		font-size: 18pt;
+	}
+	.sec-screen-con img {
+		margin-top: 0px;
+	}
+	#reg input#submit, #login input#submit {
+		font-size: 18pt;
+	}
+} 
+
+@media screen and (max-width: 590px) {
+	.sec-screen-con h2 {
+		font-size: 16pt;
+	}
+	#reg label, #login label {
+		font-size: 10pt;
+		width: 50%;
+	}
+	#reg input, #login input {
+		height: 30px;
+		font-size: 10pt;
+		width: 50%;
+	}
+		#reg input#submit, #login input#submit {
+		font-size: 12pt;
+	}
+	#reg {
+		padding-bottom: 30px;
+	}
+	.accept {
+		margin-bottom: 40px;
+	}
+	#login h2 {
+		margin: 30px 0;
+	}
+	.accept label#accept-lab {
+		font-size: 10pt;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.ord-frst-cont h1 {
+		font-size: 30pt;
+	}
+	#paper label {
+		font-size: 11pt;
+	}
+
+	#conditions ,
+	.materials p,
+	.discount p {
+		font-size: 11pt;
+	}
+
+	span#tot_price {
+		font-size: 20pt;
+	}
+	.spacing-cont input + i,
+	.materials input + i,
+	.deadline i,
+	.discount input + i{
+		right: -35px;
+	}
+	.spacing-cont img,
+	.materials img,
+	.deadline img,
+	.discount img {
+		width: 17px;
+		height: 17px;
+	}
+	.materials label, .deadline label, 
+	.spacing-cont label, .pg-spinner input, .sources-spinner input,
+	.discount label {
+		height: 35px;
+		padding: 10px;
+		font-size: 8pt;
+	}
+	.deadline input {
+		position: absolute;
+		top:0;
+		width: 80%;
+		font-size: 9pt;
+		padding: 15px;
+	}
+	span.plus,
+	span.minus {
+		width: 10%;
+		height: 15px;
+		right: 25%;
+	}
+	span.plus img {
+		width: 12px;
+		height: 12px;
+	}
+	.total-price {
+		margin-top: 10px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.ord-frst-cont h1 {
+		font-size: 20pt;
+	}
+	#paper label {
+		font-size: 10pt;
+	}
+	#level-button,
+	#type-button,
+	#format-button,
+	#paper-type-button,
+	#subject-button {
+		font-size: 9pt;
+	}
+	.ui-selectmenu-open {
+		font-size: 9pt;
+	}
+	.sources-spinner, .pg-spinner {
+		width: 50%;
+	}
+	.pg-spinner input, .sources-spinner input {
+		width: 80%;
+	}
+	span.plus,
+	span.minus {
+		right: 5%;
+	}
+	.spacing {
+		width: 100%;
+	}
+	.spacing-cont label {
+		width: 40%;
+	}
+	.double-lab {
+		margin-left: 10%;
+	}
+	.spacing-cont input + i, 
+	.materials input + i, .deadline i, 
+	.discount input + i {
+		right: -32px;
+	}
+	.mat-line {
+		width: 100%;
+	}
+	.materials label, .deadline label {
+		width: 80%;
+	}
+	.total-price {
+		margin-top: 10px;
+		width: 80%;
+	}
+	span#tot_price {
+		font-size: 15pt;
+	}
+	.total-date {
+		font-size: 7pt;
+		padding: 5px 15px;
+	}
+
+} 
+
+@media screen and (max-width: 400px) {
+	.accept {
+		width: 100%;
+		margin: 10px 10px 20px 10px;
+	}
+	.ord-frst-cont h1 {
+		font-size: 18pt;
+	}
+	.spacing-cont input + i, .deadline i, 
+	.discount input + i {
+		right: -25px;
+	}
+	.materials input + i {
+		right: -21px;
+	}
+	#reg input#submit, #login input#submit {
+		width: 60%;
+	}
+	.sec-screen-con h2 {
+		font-size: 13pt;
+	}
+}

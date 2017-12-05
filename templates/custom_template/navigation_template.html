@@ -1,0 +1,35 @@
+<div class="essayServise" id="header">
+  <div class="container clear">
+    <div class="essayServiseNavWarpper clear">
+
+       <div class="cloneWrapper">
+        <div class="clear">
+          <a href="/" id="essayServiseContactPhoneClone" class="essayServiseContactPhoneClone">{{list_contents_include['tel'] | safe}}</a>
+          <button class="essayServiseNavOrdersClone">{{list_contents_include['my_orders'] | safe}}</button>
+        </div>
+       </div>
+
+      <div class="essayServiseLogo">
+        {{list_contents_include['logo'] | safe}}        
+      </div>
+
+      <nav class="essayServiseNav" id="essayServiseNav">
+        <div class="clear">
+          {{list_contents_include['header_menu'] | safe}}
+
+          <button class="essayServiseContact" id="essayServiseContact" data-toggle="true">
+            <a href="/" id="essayServiseContactPhone">{{list_contents_include['tel'] | safe}}</a>
+          </button>
+
+          <a href="/" class="essayServiseNavOrders">{{list_contents_include['my_orders'] | safe}}</a>
+        </div>
+      </nav>
+
+      <button class="essayServiseToggle" data-toggle="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+	</div>
+</div>

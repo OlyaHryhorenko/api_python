@@ -1,0 +1,131 @@
+header {
+	position: relative;
+}
+.header-top {
+	background-color: #797a79;
+}
+.accardeon {
+	padding: 90px 40px;
+}
+.wrapper {
+	background-color: #e6eee9;
+}
+dt {
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	font-size: 18pt;
+	color: #303030;
+	text-transform: capitalize;
+	font-style: italic;
+}
+dd {
+	padding: 20px 15% 20px 25px;
+	margin: 0;
+	color: #303030;
+	margin: 15px 0 10px 0px;
+	font-size: 14pt;
+	background-image: repeating-linear-gradient( -45deg, 
+		transparent, transparent 0.3em, 
+		rgba(209, 214, 211, .6) 0.006em, rgba(209, 214, 211, .6) 0.4em
+		); 
+}
+
+.acc-part {
+	margin-bottom: 25px;
+	padding-left: 35px;
+	position: relative;
+}
+
+.round {
+	display: block;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background-color: #000000;
+	border-radius: 50%;
+	left: 35px;
+	top: 10px;
+}
+
+
+@media screen and (max-width:1200px) {
+
+	.acc-block {
+		padding-right: 10%;
+		margin-bottom: 80px;
+	}
+
+}
+
+@media screen and (max-width:991px) {
+	.accardeon {
+		padding: 60px 30px;
+	}
+	dt {
+		cursor: pointer;
+		font-size: 11pt;
+	}
+	dd {
+		font-size: 10pt;
+		padding: 10px 15% 10px 25px;
+	}
+	.round {
+		top: 6.5px;
+	}
+}
+
+@media screen and (max-width:767px) {
+	.accardeon {
+		padding: 60px 30px;
+	}
+
+	.round {
+		top: 5.5px;
+		left: 35px;
+	}
+	dt {
+		cursor: pointer;
+		font-size: 10pt;
+		padding-left: 15px;
+	}
+	dd {
+		margin-top: 10px;
+		font-size: 9pt;
+		padding-left: 15px;
+	}
+}
+
+@media screen and (max-width:550px) {
+	dt {
+		cursor: pointer;
+		font-size: 9pt;
+	}
+	dd {
+		font-size: 8pt;
+	}
+	.accardeon {
+		padding: 40px 20px;
+	}
+
+	.round {
+		top: 3px;
+		left: 35px;
+	}
+}
+
+@media screen and (max-width:400px) {
+	.accardeon {
+		padding: 30px 15px;
+	}
+	dt {
+		cursor: pointer;
+		font-size: 9pt;
+	}
+	dd {
+		padding-top: 10px;
+		padding-left: 15px;
+		font-size: 8pt;
+	}
+
+}

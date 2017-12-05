@@ -1,0 +1,43 @@
+<!-- Modal -->
+<div id="loginModal" class="modal-login" style="display: none;">
+	<div class="sign-up__box">
+		<button type="button" class="close sign-up__box-close" onclick="Custombox.close();">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<div class="sign-up__title h2login">LOG INTO YOUR ACCOUNT</div>
+		<form class="form form-horizontal form-user-event" method="POST">
+			<div class="sign-up__main">
+				<div class="form-controls">
+					<div class="form-group">
+						<div class="col-sm-3">
+							<label class="control-label" for="email">Email</label>
+						</div>
+						<div class="col-sm-9">
+							<input class="form-control" type="email" id="remail" name="email" data-startloginbyclick>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-3">
+							<label class="control-label" for="password">Password</label>
+						</div>
+						<div class="col-sm-9">
+							<input class="form-control" type="password" id="rpassword" name="password" data-startloginbyclick>
+						</div>
+					</div>
+				</div>
+
+				<div id="loginfailed" style="display:none"><font color="#ff0000"><strong>Unrecognized username or password.</strong></font></div>
+			</div>
+			<div class="row">
+
+				<div class="col-xs-6">
+					<span class="sign-up__help-text">Forgot your password?</span> <br>
+					<a href="/forgot.html" class="sign-up__link">Reset it here.</a>
+				</div>
+				<div class="col-xs-6">
+					<a class="btn btn-orange" id="alogin2" onclick="alogin2()">Sign in</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

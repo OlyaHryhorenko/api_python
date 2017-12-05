@@ -1,0 +1,84 @@
+@charset "UTF-8";
+* { margin:0; padding:0;}
+img { border:none;}
+@font-face {font-family: 'PT Sans Narrow';
+	font-weight: bold; 
+	src: url('fonts/PTN77F_W.eot');
+	src: local('PT Sans Narrow Bold'), url('img/fonts/PTN77F_W.woff') format('woff'),url('fonts/PTN77F_W.ttf') format('truetype'), url('fonts/PTN77F_W.svg#PTSans-NarrowBold') format('svg');}
+@font-face {font-family: 'PT Sans Narrow';
+	font-weight: normal; 
+	src: url('fonts/PTN57F_W.eot');
+	src: local('PT Sans Narrow'), url('img/fonts/PTN57F_W.woff') format('woff'),url('fonts/PTN57F_W.ttf') format('truetype'), url('fonts/PTN77F_W.svg#PTSans-NarrowBold') format('svg');}
+body { background:url(img/bg.jpg) repeat-x; font-family:Arial, Helvetica, sans-serif; font-size:13px;}
+#maincontent { width:1024px; margin:0 auto;}
+#pageheader { height:500px; margin:5px 0 0 0; background:url(img/bgp.png) 2px 0 no-repeat;}
+#logotype { float:left; width:200px; height:70px; margin:15px 0 0 0;}
+#pagetopline { height:20px; margin:15px 10px; font-size:12px; color:#5389b7;}
+#pagetoplineright { float:right;}
+#pagetoplineright a { color: #5389b7; margin:0 0 0 10px;}
+#pagetopmenu { float:right; text-align:right; height:50px; width:700px; margin:30px 12px 0 0;  font-family: 'PT Sans Narrow', Arial; font-weight: bold; text-shadow: 0 1px 0 #ffffff;}
+#pagetopmenu a { color:#333333; text-decoration:none; margin:0 0 0 30px; font-size:17px; font-weight:bold;}
+#pageheaderblockone { width:440px; height:250px; float:left; background: url(img/bghb1.jpg); margin:10px 0 0 2px; }
+#pageheaderblockone img  { margin:18px 0 0 25px;}
+#pageheaderblockone h1 { font-size:30px; margin:20px 0 0 25px; padding:0 0 4px 0; color:#444444; font-family: 'PT Sans Narrow', Arial; font-weight: bold; text-shadow: 0 1px 0 #ffffff;}
+#pageheaderblockone p  { margin:0 15px 0 30px; font-family: 'PT Sans Narrow', Arial; font-weight:normal; font-size:18px;}
+#pageheaderblocktwo { width:335px; height:250px; float:left; background:#ccc; margin:10px 0 0 21px; }
+#pageheaderblockthree { width:205px; height:250px; float:left; background: url(img/bgben.jpg); margin:10px 0 0 2px; color:#000000;}
+#pageheaderblockthree h2 { font-size:16px; margin:15px 0 0 15px; color:#000000;  font-family: 'PT Sans Narrow', Arial; font-weight: bold; text-shadow: 0 0 1px #fff;}
+#pageheaderblockthree ul { margin:10px 0 0 17px; list-style-type:none; line-height:16px; }
+#pageheaderblockthree ul li { background:url(img/listbenefits.png) no-repeat left; padding:5px 0 0 18px; margin:0 0 2px 0;  font-family: 'PT Sans Narrow', Arial; font-weight:normal; font-size:15px;}
+#contento { margin:0 0 0 20px; }
+#leftpagepart { width:730px; float:left; margin:15px;}
+#rightpagepart { width:200px; float:left; margin:20px 15px 15px 25px; }
+#rightpagepart ul { margin:10px 0 10px 0; line-height:22px; list-style-type:none;}
+#rightpagepart ul li { background:url(img/lifi.png) no-repeat left; padding:0 0 0 16px; margin:1px 0;}
+#rightpagepart ul li a { color:#197db1; background:#fafafa; display:block; padding:5px;}
+.paperformatlistyles {  margin:10px 0 10px 5px!important; }
+.paperformatlistyles li { background:url(img/lipf.png) no-repeat left!important;padding:0 0 0 18px!important; } 
+#contento h1 { font-size:20px; margin:0 0 5px 0; padding:0 0 4px 0; border-bottom:1px dashed #888888;color:#588012 ; }
+#contento h2 { font-size:16px;  margin:0 0 5px 0; padding:0 0 3px 0; border-bottom:1px dashed #cccccc; color:#555555;}
+#contento p { line-height:21px; margin:8px 0;}
+#contento h2 a {color: #555555; }
+#contento a { color: #197DB1;}
+#pagebottompart { border-top:1px dashed #888888; margin:15px 30px; color:#888888;  }
+#pagebottompart p { font-size:12px; padding:15px 0;}
+#pagebottompart ul {
+    float: left;
+    font-size: 10px;
+    margin: 10px 0 10px 5px;
+    padding: 0 10px;
+    width: 110px;
+}
+
+#pagebottompart ul li {
+    list-style-type: none;
+    margin: 7px 0;
+}
+#pagebottompart ul li a {color:#789232} 
+.pageblockoftexts { width:220px; float:left; margin:20px 0 10px 30px}
+.pageblockoftexts  h2 { font-size:16px; margin:7px 0 0 0; }
+.pageblockoftexts  h3 { font-size:13px; margin: 0 0 7px 0; color:#888888; }
+.pageblockoftexts p { line-height:19px; margin:7px 0 0 0;}
+.pageblockoftexts img { border-top:3px solid #4a8dc0; padding:2px 0 0 0;}
+.clear { clear:both;}
+.red { color:#df4900}
+.orderbutton { color:#789232!important;}
+.bannerorder { margin:20px 0; cursor:pointer;}
+.h2size { font-size:16px; margin:7px 0 0 0; }
+.h3size { font-size:13px; margin: 0 0 7px 0; color:#888888; }
+.pricetable {
+    font-size: 12px;
+    }
+    
+    .pricetable td {
+        background: none repeat scroll 0 0 #CDE2ED;
+            padding: 5px;
+            }
+            
+            .trhead td {
+                background: none repeat scroll 0 0 #D1E39C;
+                    font-weight: bold;
+                        padding: 5px;
+                        }
+                        
+                        #leftpagepart ul { margin:5px 0 5px 25px; line-height:21px; }

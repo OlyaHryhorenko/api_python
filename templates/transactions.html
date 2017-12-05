@@ -1,0 +1,106 @@
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css?v=1">
+
+    <div class="bb-alert alert alert-info alert-dismissible" style="display: none;">
+        <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+        <span class="al_center">Info</span>
+    </div>
+    <div class="bb-alert-success alert alert-success alert-dismissible" style="display: none;">
+        <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+        <span class="al_center">Success</span>
+    </div>
+    <div class="bb-alert-warning alert alert-warning alert-dismissible" style="display: none;">
+        <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+        <span class="al_center">Warning</span>
+    </div>
+    <div class="bb-alert-danger alert alert-danger alert-dismissible" style="display: none;">
+        <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+        <span class="al_center">Danger</span>
+    </div>
+
+<div id="dashboard" style="margin-bottom: 50px;">
+  <h1>TRANSACTIONS</h1>
+  <div class="cabinet wrapper-content dash-container">
+    <div class="cabinet__status"></div>
+    <div class="dash-sidebar">
+      <ul>
+        <li>
+          <a href="/order" class="three-d">
+            <i class="dash-icon flaticon-I"></i>NEW ORDER
+            <span aria-hidden="true" class="three-d-box">
+              <span class="front"><i class="dash-icon flaticon-I"></i>NEW ORDER</span>
+              <span class="back"><i class="dash-icon flaticon-I"></i>NEW ORDER</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="/dashboard" class="three-d">
+            <i class="dash-icon flaticon-C"></i>MY ORDERS
+            <span aria-hidden="true" class="three-d-box">
+              <span class="front"><i class="dash-icon flaticon-C"></i>MY ORDERS</span>
+              <span class="back"><i class="dash-icon flaticon-C"></i>MY ORDERS</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="/transactions" class="three-d active">
+            <i class="dash-icon flaticon-H"></i>TRANSACTIONS
+            <span aria-hidden="true" class="three-d-box">
+              <span class="front"><i class="dash-icon flaticon-H"></i>TRANSACTIONS</span>
+              <span class="back"><i class="dash-icon flaticon-H"></i>TRANSACTIONS</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="/profile" class="three-d">
+            <i class="dash-icon flaticon-G"></i>MY SETTINGS
+            <span aria-hidden="true" class="three-d-box">
+              <span class="front"><i class="dash-icon flaticon-G"></i>MY SETTINGS</span>
+              <span class="back"><i class="dash-icon flaticon-G"></i>MY SETTINGS</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="/logout" class="three-d">
+            <i class="dash-icon flaticon-F"></i>LOGOUT
+            <span aria-hidden="true" class="three-d-box">
+              <span class="front"><i class="dash-icon flaticon-F"></i>LOGOUT</span>
+              <span class="back"><i class="dash-icon flaticon-F"></i>LOGOUT</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="dash-content">
+      {% if transactions %}
+        <table class="dash-table-list-orders" style="min-width: 420px;">
+          <thead>
+            <tr>
+              <th>DATE</th>
+              <th>ORDER ID</th>
+              <th>STATUS</th>
+              <th>PRICE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for transaction in transactions %}
+            <tr>
+               <td class="dash-date-transaction dash-icon flaticon-A">{{transaction.date}}</td>
+               <td><a href="/orderinfo?id={{transaction.uid}}">{{ transaction.uid }}</a></td>
+               <td>{{transaction.check_out_status}}</td>
+               <td>${{transaction.price}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <div class="dash-form no-transaction" style="width: 100%; background: #fff;">
+          <div class="header">THE ORDER HAS NOT BEEN PAID YET.</div>
+          <p>Transaction details will appear here once the order is paid.</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

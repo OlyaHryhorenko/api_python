@@ -1,0 +1,47 @@
+.not_found h1{
+    font-size: 17em;
+    text-align: center;
+    color: #f24e93;
+    margin: 10px 0;
+}
+.not_found .top {
+    font-size: 1.5em;
+    color: #666666;
+}
+.not_found {
+text-align: center;
+}
+.error_text {
+    font-size: 2em;
+    color: #666666;
+    text-align: center;
+
+}
+.error_button  {
+
+    color: #ffffff;
+    text-align: center;
+    font-weight: 500;
+    display: inline-block;
+    transition: 0.4s;
+    -o-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    font-size: 15pt;
+    margin-bottom: 50px;
+    padding: 12px 25px;
+    background: #f24e93;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 27px;
+    border: 1px solid #ffffff;
+
+}
+.error_button a {
+    color: #fff;
+    text-decoration: none;
+}
+.error_button:hover a {
+    color: #fff;
+}

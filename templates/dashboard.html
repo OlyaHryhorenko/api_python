@@ -1,0 +1,180 @@
+
+<div class="line-header"></div>
+  <link rel="stylesheet" href="/static/css/dashboard.css?v=1">
+<div id="dashboard">
+  <h1>My Orders site id - {{session}}</h1>
+  <div class="bb-alert alert alert-info alert-dismissible" style="display: none;">
+      <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+      <span class="al_center">Info</span>
+  </div>
+  <div class="bb-alert-success alert alert-success alert-dismissible" style="display: none;">
+      <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+      <span class="al_center">Success</span>
+  </div>
+  <div class="bb-alert-warning alert alert-warning alert-dismissible" style="display: none;">
+      <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+      <span class="al_center">Warning</span>
+  </div>
+  <div class="bb-alert-danger alert alert-danger alert-dismissible" style="display: none;">
+      <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+      <span class="al_center">Danger</span>
+  </div>
+  <div class="bb-alert alert alert-info" style="display: none;">
+    <span class="al_center"></span>
+  </div>
+  <div id="load_content" style="display: none;"></div>
+  <div class="cabinet wrapper-content dash-container">
+    <div class="cabinet__status"></div>
+      <div class="dash-sidebar">
+        <ul>
+              <li>
+                <a href="/order" class="three-d">
+                  <i class="dash-icon flaticon-I"></i>NEW ORDER
+                  <span aria-hidden="true" class="three-d-box">
+                    <span class="front"><i class="dash-icon flaticon-I"></i>NEW ORDER</span>
+                    <span class="back"><i class="dash-icon flaticon-I"></i>NEW ORDER</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="/dashboard" class="three-d active">
+                  <i class="dash-icon flaticon-C"></i>MY ORDERS
+                  <span aria-hidden="true" class="three-d-box">
+                    <span class="front"><i class="dash-icon flaticon-C"></i>MY ORDERS</span>
+                    <span class="back"><i class="dash-icon flaticon-C"></i>MY ORDERS</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="/transactions" class="three-d">
+                  <i class="dash-icon flaticon-H"></i>TRANSACTIONS
+                  <span aria-hidden="true" class="three-d-box">
+                    <span class="front"><i class="dash-icon flaticon-H"></i>TRANSACTIONS</span>
+                    <span class="back"><i class="dash-icon flaticon-H"></i>TRANSACTIONS</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="/profile" class="three-d">
+                  <i class="dash-icon flaticon-G"></i>MY SETTINGS
+                  <span aria-hidden="true" class="three-d-box">
+                    <span class="front"><i class="dash-icon flaticon-G"></i>MY SETTINGS</span>
+                    <span class="back"><i class="dash-icon flaticon-G"></i>MY SETTINGS</span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="/logout" class="three-d">
+                  <i class="dash-icon flaticon-F"></i>LOGOUT
+                  <span aria-hidden="true" class="three-d-box">
+                    <span class="front"><i class="dash-icon flaticon-F"></i>LOGOUT</span>
+                    <span class="back"><i class="dash-icon flaticon-F"></i>LOGOUT</span>
+                  </span>
+                </a>
+              </li>
+        </ul>
+      </div>
+      <div class="dash-content" style="margin-bottom: 100px;">
+          <table class="dash-table-list-orders">
+            <thead>
+              <tr>
+                <th>Order id</th>
+                <th>topic</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th colspan="2">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if orderslist %}
+              {% for orders in orderslist %}
+              <tr class="dash-list-{{orders.order_status|lower|replace(' ','-')}}">
+                <td class="dash-id-topic"><i></i><a class="order-info__more" title="#{{orders.uid}} — Order Details" href="/orderinfo?id={{orders.uid}}">{{ orders.uid }}{% if orders.id_extr_ord and not orders.extr_date_paid and orders.can_pay_extra_orders==0 %}_{{ orders.id_extr_ord }}{% endif %}</a></td>
+                {% autoescape false %}
+                  <td>{{orders.topic[0:50] | uni_ascci}}</td>
+                {% endautoescape %}
+                <td><span id="sum_ord2" class="sum-order currency-usd">{% if orders.id_extr_ord and not orders.extr_date_paid and orders.can_pay_extra_orders==0 %}
+                {{ orders.final_order_surcharge }}{% else %}{{ orders.price }}{% endif %}</span>
+                  <span id="typeWork2" class="hide">{{orders.type_work}}</span>
+                  <span id="paperformat2" class="hide">{{orders.paper_format}}</span>
+                  <span id="coupon2" class="hide">{{orders.discount_code}}</span>
+                  <span id="assigmenttype2" class="hide">{{orders.assignment}}</span>
+                  <span id="title2" class="hide">{{orders.topic}}</span>
+                  <span id="id_ord2" class="hide">{{orders.uid}}</span>
+                </td>
+                <td class="dash-icon dash-icons">{{orders.order_status}}</td>
+                  {% if orders.order_status|lower|replace(' ','-') == 'unpaid' %}
+                    <td><a href="/orderinfo?id={{orders.uid}}" class="dash-icon flaticon-K"></a></td>
+                    <td>
+                      {% if orders.id_order_status == 1 or orders.id_order_status == 10 %}
+                        <a href="{{ url_for('paypal_redirect', orderid=orders.uid) }}" class="dash-icon-pay-pall" target="_blank"></a>
+                      {% endif %}
+                    </td>
+                  {% else %}
+                    {% if orders.count_file %}
+                      {% if orders.count_file != 1 %}
+                        {% if fileslistorder %}
+                              <td class="click-cell"><a href="/orderinfo?id={{orders.uid}}" class="dash-icon flaticon-K"></a></td>
+                              <td>
+                                <div class="btn-group group-select">
+                                  <div class="fa fa-cloud-download" aria-hidden="true" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  </div>
+                                  <ul class="dropdown-menu dropdown-menu-right">
+                                    {% for fls in fileslistorder %}
+                                      {% if orders.uid == fls.uid %}
+                                        {% if fls.name %}
+                                        {% if (fls.status < 5) %}
+                                          <li><a href="/download?file={{fls.path}}&name={% if (fls.status == 0) %}{{fls.uid}}.{{(fls.name).rsplit('.', 1)[1]}}{% elif (fls.status == 1) %}revision_{{fls.uid}}.{{(fls.name).rsplit('.', 1)[1]}}{% endif %}">{% if (fls.status == 0) %}{{fls.uid}}.{{(fls.name).rsplit('.', 1)[1]}}{% else %}revision_{{fls.uid}}.{{(fls.name).rsplit('.', 1)[1]}}{% endif %}</a></li>
+                                        {% endif %}
+                                        {% endif %}
+                                      {% endif %}
+                                    {% endfor %}
+                                  </ul>
+                                  </div>
+                              </td>
+                        {% endif %}
+                      {% else %}
+                        {% if fileslistorder %}
+                              {% for fls in fileslistorder %}
+                                {% if orders.uid == fls.uid %}
+                                  {% if fls.name %}
+                                    {% if (fls.status < 5) %}
+                                      <td><a href="/orderinfo?id={{orders.uid}}" class="dash-icon flaticon-K"></a></td>
+                                      <td class="group-select">
+                                        <a href="/download?file={{fls.path}}&name={% if (fls.status == 0) %}{{fls.uid}}.{{(fls.name).rsplit('.', 1)[1]}}{% elif (fls.status == 1) %}revision_{{fls.uid}}.{{(fls.name).rsplit('.', 1)[1]}}{% endif %}" class="fa fa-cloud-download"></a>
+                                      </td>
+                                    {% endif %}
+                                  {% endif %}
+                                {% endif %}
+                              {% endfor %}
+                        {% endif %}
+                      {% endif %}
+                    {% else %}
+                      <td colspan="2"><a href="/orderinfo?id={{orders.uid}}" class="dash-icon flaticon-K"></a></td>
+                    {% endif %}
+
+                  {% endif %}
+              </tr>
+              {% endfor %}
+              {% endif %}
+            </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+<script src="static/js/jquery.1.9.1.js"></script>
+<script src="static/js/jquery.carouselHeight.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/legacy.min.js"></script>
+<script src="static/js/custombox.min.js"></script>
+<script src="static/js/moment.js"></script>
+<script src="static/js/bootstrap-datetimepicker.js"></script>
+<script src="static/js/jquery.form.js"></script>
+<script src="static/js/url.min.js"></script>
+<script src="static/js/calc.js"></script>
+<script src="static/js/order_scripts.js"></script>
+<script src="static/js/app.js"></script>
+<script src="static/js/bootbox.min.js"></script>
+<script src="static/js/utils.js"></script>
+<script src="static/js/media-paragraph.js"></script>
+

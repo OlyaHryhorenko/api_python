@@ -1,0 +1,7 @@
+<ul>
+	{% if menu_items  %} 
+	{% for item in menu_items %}
+		<li><a href="{{item.urlfield}}" id="page_header_{{item.sysfield}}">{{item.namefield}}</a></li>
+	{% endfor %}
+	{% endif %}
+</ul>

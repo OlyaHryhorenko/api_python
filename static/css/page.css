@@ -1,0 +1,756 @@
+h1 {
+	color: #707070;
+	font-size: 22pt;
+}
+.order-cont {
+	overflow: hidden;
+}
+.tabs {
+	overflow: hidden;
+	position: relative;
+	bottom: -2px;
+}
+
+.tab {
+	display: block;
+	width: 33.2%;
+	margin-right: 1px;
+	float: left;
+	text-align: center;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.tab p {
+	font-size: 22pt;
+	margin: 5px;
+}
+
+
+
+.tab_1 {
+	background-color: #650f0f;
+}
+.tab_2 {
+	background-color: #af1414;
+}
+.tab_3 {
+	background-color: #9a9a9a;
+	margin-right: 0;
+	float: right;
+}
+
+.items {
+	height: 355px;
+	border-radius: 3px;
+	margin-bottom: 75px;
+	padding-top: 50px;
+	color: #ffffff;
+}
+
+.item_1 {
+	background-color: #650f0f;
+}
+.item_2 {
+	background-color: #af1414;
+}
+.item_3 {
+	background-color: #9a9a9a;
+}
+
+.tab-content h3 {
+	padding-left: 10px;
+	margin-bottom: 30px;
+}
+
+.new-client {
+	padding-left: 20px;
+}
+.input-cont {
+	position: relative;
+	overflow: hidden;
+}
+.new-client:after {
+	position: absolute;
+	content: "";
+	height: 60%;
+	width: 1px;
+	background-color: #ce2c2c;
+	right: 0px;
+	top: 30%;
+}
+.new-client:before {
+	position: absolute;
+	content: "";
+	height: 60%;
+	width: 1px;
+	background-color: #5e0303;;
+	right: -2px;
+	top: 30%;
+}
+
+
+.new-client .input-part {
+	width:50%;
+	display: block;
+	float: left;
+}
+.input-part {
+	margin-bottom: 35px;
+	text-align: right;
+	padding: 0 10px;
+}
+.input-part input,
+#type-button,
+#subject-button {
+	height: 30px;
+	width: 60%;
+	color: #000000;
+	font-size: 10pt;
+	padding-left: 10px;
+	box-shadow: inset 0px 0px 1px rgba(0,0,0,0.3);
+	outline: 0;
+	outline-offset: 0;
+}
+.input-part label {
+	text-align: left;
+	width: 38%;
+	display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:992px) {
+	h1 {
+		font-size: 19pt;
+	}
+
+	.tab p {
+		font-size: 18pt;
+		margin: 5px;
+	}
+	.items {
+		height: 455px;
+		border-radius: 3px;
+		margin-bottom: 55px;
+		padding-top: 40px;
+	}
+	.tab-content h3 {
+		font-size: 12pt;
+		margin-bottom: 25px;
+	}
+
+
+	.input-part {
+		text-align: left;
+	}
+	.sign label {
+		width: 20%;
+	}
+	.new-client:after,
+	.new-client:before {
+		display: none;
+	}
+
+
+}
+
+
+
+@media screen and (max-width:650px) {
+	h1 {
+		font-size: 16pt;
+	}
+	.input-part label {
+		display: block;
+		width: 100%;
+	}
+	.items {
+		margin-bottom: 35px;
+		padding-top: 25px;
+		height: 400px;
+	}
+	.input-part input,
+	#type-button,
+	#subject-button {
+		width: 85%;
+	}
+	.input-part {
+		margin-bottom: 15px;
+	}
+	.tab-content h3 {
+		margin-bottom: 5px;
+	}
+	.sign {
+		margin-top: 15px;
+		float: none;
+	}
+	.tab p {
+		font-size: 14pt;
+		margin: 5px;
+	}
+	.tab {
+		margin-right: 0px;
+		width: 33.3333%;
+	}
+
+}
+
+@media screen and (max-width:400px) {
+	.tab p {
+		font-size: 12pt;
+	}
+	h1 {
+		font-size: 14pt;
+	}
+}
+
+
+
+
+
+
+
+
+
+.item_2-cont p {
+	font-size: 10pt;
+}
+
+
+.item_2-cont {
+	width: 80%;
+	margin: 0 auto;
+	padding: 5px 0 50px 0;
+}
+.select-part {
+	width: 40%;
+	display: inline-block;
+	text-align: right;
+}
+.select-part label {
+	display: inline-block;
+	margin-right: 12px;	
+}
+.select-part:last-child {
+	margin-left: 10%;
+}
+#type-button,
+#subject-button {
+	width: 65%;
+}
+.ui-selectmenu-open {
+	font-size: 10pt;
+}
+.ui-menu .ui-menu-item-wrapper {
+	padding-left: 10px!important;
+}
+
+label.form-lab  {
+	width: 19.5%;
+	float: left;
+	text-align: center;
+	margin: 0;
+	color: #000000;
+	font-size: 10pt;
+	padding: 10px 0;
+	background-color: #ffffff;
+	margin-right: 1px;
+}
+
+.label-cont input {
+	display: none;
+}
+.label-cont input:checked + label{
+	background-color: #650f0f;
+	color: #ffffff;
+}
+
+.paper-format {
+	margin-top: 40px;
+	margin-bottom: 50px;
+}
+
+
+
+
+.sources,
+.add {
+	width: 40%;
+	display: inline-block;
+	margin-top: 30px;
+}
+.add {
+	margin-left: 18%;
+	position: relative;
+}
+.sources {
+	text-align: left;
+	position: relative;
+}
+.sources p,
+.sources span {
+	display: inline-block;
+}
+.sources p {
+	font-size: 10pt;
+}
+.sources input {
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	outline: 0;
+	outline-offset: 0;
+	margin-left: 20px;
+	color: #ffffff;
+	font-size: 12pt;
+	border: 0;
+	background-color: #af1414;
+}
+.sources span {
+	width: 20px;
+	height: 25px;
+	display: block;
+	line-height: 25px;
+	text-align: center;
+	cursor: pointer;
+	position: absolute;
+	font-weight: bold;
+}
+.minus {
+	top: 0px;
+	left: 38%;
+	border-bottom: 1px solid #620404;
+}
+.plus {
+	left: 38%;
+	bottom: 0px;
+	border-top:1px solid #cf2c2c;
+}
+.add label {
+	padding-left: 30px;
+}
+#add {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: -10px;
+}
+
+
+
+
+
+
+@media screen and (max-width:1200px) {
+	.select-part {
+		width: 45%;
+	}
+	.select-part:last-child {
+		margin-left: 5%;
+	}
+}
+@media screen and (max-width:992px) {
+	.item_2-cont {
+		width: 88%;
+	}
+	.select-part label {
+		display: block;
+	}
+	.select-part label {
+		text-align: left;
+	}
+	.select-part #subject-button,
+	.select-part #type-button {
+		width: 85%;
+	}
+	.select-part {
+		text-align: left;
+		width: 49%;
+		padding-left: 20px;
+	}
+	.select-part:last-child {
+		margin-left: 0%;
+	}
+	.sources input {
+		margin-left: 10px;
+	}
+	.minus {
+		left: 45%;
+	}
+	.plus {
+		left: 45%;
+	}
+	.add label {
+		padding-left: 25px;
+		font-size: 10pt;
+	}
+	#add {
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		left: -11px;
+	}
+}
+
+@media screen and (max-width:768px) {
+	.order-cont {
+		padding-left: 20px;
+	}
+	.item_2-cont {
+		width: 95%;
+	}
+	.sources, .add {
+		text-align: center;
+	}
+	.minus {
+		left: 75%;
+	}
+	.plus {
+		left: 75%;
+	}
+	.paper-format p {
+		margin-bottom: 0;
+	}
+	label.form-lab  {
+		font-size: 9pt;
+		padding: 10px 0;
+	}
+	.add {
+		margin-left: 10%;
+	}
+}
+
+
+@media screen and (max-width:600px) {
+	.sources,
+	.add {
+		width: 100%;
+		display: inline-block;
+		margin-top: 25px;
+		text-align: center;
+	}
+	.add label {
+		padding-left: 0;
+	}
+
+	#add {
+		left: 15%;
+		top: 3px;
+	}
+	.minus {
+		left: 65%;
+	}
+	.plus {
+		left: 65%;
+	}
+	.sources input {
+		width: 30px;
+		height: 50px;
+		margin-left: 5px;
+		font-size: 11pt;
+	}
+	label.form-lab  {
+		font-size: 7pt;
+		padding: 7px 0;
+	}
+}
+
+@media screen and (max-width:450px) {
+	.minus {
+		left: 70%;
+	}
+	.plus {
+		left: 70%;
+	}
+	label.form-lab  {
+		font-size: 5pt;
+		padding: 9px 0;
+	}
+	#add {
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		left: 3%;
+	}
+	.paper-format {
+		margin-bottom: 20px;
+	}
+	..sources, .add {
+		margin-top: 20px;
+		font-size: 9pt;
+	}
+	.add label {
+		font-size: 9pt;
+	}
+}
+
+
+
+
+
+
+
+
+.left-col {
+	width: 49%;
+	display: block;
+	float: left;
+	padding: 0 30px 0 60px;
+	text-align: right;
+	overflow: hidden;
+}
+.paper-col label {
+	vertical-align: top;
+	font-size: 10pt;
+}
+.left-col textarea,
+#type-two-button {
+	background-color: #ffffff;
+	color: #000000;
+	border: 0;
+	width: 65%;
+	border-radius: 3px;
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3)!important;
+	font-size: 10pt;
+	margin-left: 15px;
+}
+.left-col textarea {
+	height: 110px;
+}
+.type-col {
+	margin-bottom: 20px;
+}
+.want {
+	position: relative;
+	margin-top: 10px;
+	font-size: 10pt;
+	text-align: right;
+}
+.want label {
+	width: 75%;
+	display: inline-block;
+}
+#report {
+	width: 20px;
+	height: 20px;
+	position: relative;
+	left: -10px;
+	top: 5px;
+	border-radius: 3px;
+}
+.sub {
+	text-align: center;
+	margin-top: 30px;
+	width: 100%;
+	float: left;
+}
+
+#ord-sub {
+	width: 30%;
+	color: #ffffff;
+	border-radius: 5px;
+	border: 0;
+	background-color: #650f0f;
+	padding: 7px;
+	font-size: 16pt;
+}
+
+
+.right-col {
+	width: 49%;
+	display: block;
+	float: left;
+	padding: 0 20px;
+}
+.right-col p {
+	display: inline-block;
+	width: 38%;
+	float: left;
+	margin: 0;
+	font-size: 10pt;
+	text-align: right;
+
+}
+.add_mat,
+.discount-cont {
+	overflow: hidden;
+}
+.add_mat p {
+	margin-top: 15px;
+}
+.discount-cont  {
+	margin-top: 20px;
+}
+.discount-cont p {
+	vertical-align: top;
+}
+.add_mat label {
+	width: 55%;
+	background-color: #9a9a9a;
+	border-bottom: 1px solid black;
+	float: right;
+	text-align: left;
+	padding-left: 5px;
+	font-size: 9pt;
+	margin-left: 4%;
+}
+.add_mat label:last-child {
+	border-bottom: 0;
+}
+.discount-cont label  {
+	
+}
+.add_mat input,
+.discount-cont input {
+	display: none;
+}
+.add_mat input:checked + label,
+.discount-cont input:checked + label {
+	background-color: #650f0f;
+	color: #ffffff;
+}
+.discount-cont label {
+	width: 55%;
+	float: right;
+	height: 30px;
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
+	margin-left: 4%;
+}
+.sum {
+	display: inline-block;
+	width: 55%;
+	font-size: 18pt;
+	margin-left: 4%;
+	float: right;
+
+}
+.total_price p {
+	vertical-align: middle;
+	padding-right: 10px;
+	margin-top: 10px;
+}
+.total_price {
+	margin-top: 20px;
+}
+
+
+@media screen and (max-width:992px) {
+	.paper-col label,
+	.type-col label {
+		display: block;
+		width: 100%;
+		text-align: left;
+		font-size: 10pt;
+	}
+	.left-col textarea,
+	#type-two-button {
+		width: 100%;
+		margin: 0;
+	}
+	.want label {
+		width: 100%;
+	}
+	#report {
+		position: absolute;
+		left: -10%;
+		top: 3px;
+	}
+}
+@media screen and (max-width:768px) {
+	.left-col,
+	.right-col {
+		width: 80%;
+		margin: 0 auto;
+		float: none;
+	}
+	.left-col {
+		margin-bottom: 20px;
+	}
+	.item_3  {
+		height: 600px;
+	}
+	#report {
+		position: absolute;
+		left: 20%;
+		top: 1px;
+	}
+}
+@media screen and (max-width:600px) {
+	.right-col p {
+		width: 100%;
+		display: block;
+		text-align: center;
+		margin-bottom: 5px;
+		float: none;
+	}
+	.add_mat label,
+	.discount-cont label,
+	.sum {
+		display: block;
+		margin: 0 auto;
+		float: none;
+	}
+	.sum {
+		text-align: center;
+	}
+	.total_price {
+		margin-top: 5px;
+	}
+	#report {
+		position: absolute;
+		left: 3%;
+		top: 3px;
+	}
+	.item_3  {
+		height: 650px;
+	}
+
+	#ord-sub {
+		font-size: 12pt;
+	}
+	.sub {
+		margin-top: 15px;
+	}
+	.left-col {
+		padding: 0 20px;
+	}
+}
+@media screen and (max-width:500px) {
+	.left-col,
+	.right-col {
+		width: 95%;
+		margin: 0 auto;
+		float: none;
+	}
+	.add_mat label {
+		width: 75%;
+	}
+}
+@media screen and (max-width:400px) {
+	#report {
+		position: absolute;
+		left: 0%;
+		top: 1px;
+		width: 15px;
+		height: 15px;
+	}
+	.want label {
+		font-size: 8pt;
+	}
+		#ord-sub {
+		font-size: 10pt;
+	}
+}

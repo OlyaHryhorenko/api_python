@@ -1,0 +1,25 @@
+
+.hide_element{
+    display: none;
+}
+
+.btn_aslink {
+    border: none;
+    border-radius: initial;
+    background-color: transparent;
+    margin: 0 !important;
+    padding: 5px 20px !important;
+    text-align: left;
+}
+.btn_aslink:hover {
+    background-color: #f5f5f5;
+}
+
+span.moveup_f, span.movedown_f, span.moveup_h, span.movedown_h {
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+span.moveup_f:hover, span.movedown_f:hover, span.moveup_h:hover, span.movedown_h:hover {
+    color: red;
+}

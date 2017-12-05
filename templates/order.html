@@ -1,0 +1,606 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="/static/js/jquery-ui.min.js"></script>
+<script src="/static/js/moment.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+
+    <link rel="stylesheet" href="static/css/order.css?v=1">
+ <link rel="stylesheet" href="/static/gen/mainstyle.css?v=1">
+
+<div class="bb-alert alert alert-info alert-dismissible" style="display: none;">
+    <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+    <span class="al_center">Info</span>
+</div>
+<div class="bb-alert-success alert alert-success alert-dismissible" style="display: none;">
+    <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+    <span class="al_center">Success</span>
+</div>
+<div class="bb-alert-warning alert alert-warning alert-dismissible" style="display: none;">
+    <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+    <span class="al_center">Warning</span>
+</div>
+<div class="bb-alert-danger alert alert-danger alert-dismissible" style="display: none;">
+    <button type="button" class="close close_button" data-dismiss="alert" aria-label="Close">&times;</button>
+    <span class="al_center">Danger</span>
+</div>
+<section class="order_page  container-fluid">
+<div class="order-header-h">
+    <h1>Place an order</h1>
+</div>
+<div class="wrapper-content  first-screen" id="order-form">
+    <div class=" row order">
+         <form action="/make_order" name="subform" id="subform" method="POST" enctype="multipart/form-data">
+            <div class="order-left-col">
+                <div class="row">
+                    <div id="order-work-type" class="order-select col-md-6 col-xs-12">
+                    Type of work
+                    <div class="order-bg-select ">
+                        <select name="workType" class="order-select select-main" id="workType" {%- if cv != '1' -%} disabled {% endif %}>
+                            {%- if cv -%}
+                                <option value="1" {% if request.args.get('type_work') == 'wrt' %} selected="selected" {% endif %}>Writing from scratch</option>
+                                <option value="2" {% if request.args.get('type_work') == 'edt' %} selected="selected" {% endif %}>Editing</option>
+                            {%- else %}
+                                <option value="1">Writing from scratch</option>
+                            {%- endif %}
+                        </select>
+                        {%- if cv != '1' %}
+                            <input type="hidden" value="1" name="workType">
+                        {%- endif %}
+                    </div>
+                </div>
+                    <div class="inline-input-container dooble-container col-md-6 col-xs-12">
+                <div class="inline-input-item align-double">
+                        <div class="order-header">
+                            Pages&nbsp;
+                            {% if cv %}
+                                <i class="glyphicon glyphicon-question-sign info_label" aria-hidden="true" data-original-title="Select the required number of pages (1 page is approximately 300 words). If you need a PowerPoint Presentation, please select the number of slides (1 page = 2 slides). If you need a non-writing assignment (e.g. Math Problem), contact us via the live support chat and we will help you."></i>
+                            {% endif %}
+                            <div id="order-words"><span data-pagesCount>300 words</span></div>
+                        </div>
+                        <div>
+                            <div class="order-input-with-button">
+                                <button class="prev inline-button default-inline-button" data-input-action="minus" {% if cv != '1' %} disabled="disabled" style="cursor: default;"{% endif %}>-</button>
+                                {% if pages %}
+                                    <input type="number" name="pages" id="pages" maxlength="3" data-valid="number" class="scan-input" value="{{ pages }}" data-count-input>
+                                {% elif cv != '1' %}
+                                    <input type="number" name="pages" id="pages" maxlength="3" data-valid="number" class="scan-input" value="2" readonly data-count-input>
+                                {% else %}
+                                    <input type="number" name="pages" id="pages" maxlength="3" data-valid="number" class="scan-input" value="1" data-count-input>
+                                {% endif %}
+                                {%- if cv != '1' %}
+                                    <input type="hidden" value="2" name="pages">
+                                {%- endif %}
+                                <button class="next inline-button default-inline-button" data-input-action="plus" {%- if cv != '1' -%} disabled="disabled" style="cursor: default;"{%- endif %}>+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="order-select col-md-6 col-xs-12">
+                    Academic level&nbsp;
+                    {%- if cv -%}
+                        <i class="glyphicon glyphicon-question-sign info_label" aria-hidden="true" data-original-title="Select an appropriate academic level, which corresponds to your level of writing."></i>
+                    {%- endif %}
+                    <select name="academicLevel" id="academLevel" class="order-select select-main" {%- if cv != '1' -%} disabled {% endif %}>
+                        {%- if cv -%}
+                            <option value="1" {% if request.args.get('lvl') == 'hs' %} selected="selected" {% endif %} {%- if academicLevel == "1" -%} selected="selected" {% endif %}>High school</option>
+                            <option value="2" {% if request.args.get('lvl') == 'c' %} selected="selected" {% endif %} {%- if academicLevel == "2" -%} selected="selected" {% endif %}>College</option>
+                            <option value="3" {% if request.args.get('lvl') == 'u' %} selected="selected" {% endif %} {%- if academicLevel == "3" -%} selected="selected" {% endif %}>University</option>
+                            <option value="4" {% if request.args.get('lvl') == 'm' %} selected="selected" {% endif %} {%- if academicLevel == "4" -%} selected="selected" {% endif %}>Master`s</option>
+                            <option value="5" {% if request.args.get('lvl') == 'p' %} selected="selected" {% endif %} {%- if academicLevel == "5" -%} selected="selected" {% endif %}>Ph.D.</option>
+                        {%- else %}
+                            <option value="1">High school</option>
+                        {%- endif %}
+                    </select>
+                    {%- if cv != '1' %}
+                        <input type="hidden" value="1" name="academicLevel">
+                    {%- endif %}
+                </div>
+                <div class="inline-input-container dooble-container col-md-6 col-xs-12">
+                    <div class="inline-input-item align-double">
+                        <div class="order-header">
+                            <span>Sources</span>
+                        </div>
+                        <div class="order-input-with-button">
+                            <button class="prev inline-button default-inline-button" data-input-action="minus" {%- if cv != '1' -%} disabled="disabled" style="cursor: default;" {%- endif %}>-</button>
+                            <input type="tel" name="sources" id="sources"  data-valid="number" data-min="0" class="scan-input" value="0" data-count-input  data-original-title="Specify the number of sources to be used, if required." {%- if cv != '1' -%} readonly {%- endif %}>
+                            <button class="next inline-button default-inline-button" data-input-action="plus" {%- if cv != '1' -%} disabled="disabled" style="cursor: default;"{%- endif %}>+</button>
+                        </div>
+                        {%- if cv != '1' %}
+                            <input type="hidden" value="0" name="sources">
+                        {%- endif %}
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="order-select col-md-6 col-xs-12">
+                    Paper format&nbsp;
+                    {%- if cv -%}
+                        <i class="glyphicon glyphicon-question-sign info_label" aria-hidden="true" data-original-title="Choose the style for your paper to be formatted in."></i>
+                    {%- endif %}
+                    <select name="paperFormat" id="paperFormat1" class="order-select select-main" {%- if cv != '1' -%} disabled {% endif %}>
+                        {%- if cv -%}
+                            <option value="MLA">MLA</option>
+                            <option value="APA">APA</option>
+                            <option value="Chicago">Chicago</option>
+                            <option value="Harvard">Harvard</option>
+                            <option value="Other">Other</option>
+                        {%- else %}
+                            <option value="MLA">MLA</option>
+                        {%- endif %}
+                    </select>
+                    {%- if cv != '1' %}
+                        <input type="hidden" value="MLA" name="paperFormat">
+                    {%- endif %}
+                </div>
+                    <div class="inline-input-container radio-input-container col-md-6 col-xs-12" id="switch-spacing">
+                    <div class="">
+                        <div class="order-header">Spacing</div>
+                        <select name="spaced" class="order-select select-main">
+                            <option class="hidden-radio" id="spaced1"  value="1"> Single spaced</option>
+                             <option class="hidden-radio" id="spaced2"  value="2" selected> Double spaced</option>
+                        </select>
+
+                    </div>
+
+                </div>
+                </div>
+                <div class="row">
+                    <div class="order-select col-md-6 col-xs-12">
+                    Type of paper&nbsp;
+                    {%- if cv -%}
+                        <i class="glyphicon glyphicon-question-sign info_label" aria-hidden="true" data-original-title="Select the most suitable type of paper needed. If the necessary type is not listed, contact us via the live support chat and we will help you choose."></i>
+                    {%- endif %}
+                    <select name="paperType" id="paperType" class="order-select select-main" {%- if cv != '1' -%} disabled {% endif %} value="{{papertype}}">
+                    {%- if cv -%}
+                        <option value="1" {%- if papertype == '1' -%}  selected="selected" {% endif %}>Essay</option>
+                        <option value="2" {%- if papertype == '2' -%}  selected="selected" {% endif %}>Coursework</option>
+                        <option value="3" {%- if papertype == '3' -%}  selected="selected" {% endif %}>Term Paper</option>
+                        <option value="4" {%- if papertype == '4' -%}  selected="selected" {% endif %}>Research Paper</option>
+                        <option value="5"{%- if papertype == '5' -%}  selected="selected" {% endif %}>Book Report</option>
+                        <option value="6" {%- if papertype == '6' -%}  selected="selected" {% endif %}>Movie Review</option>
+                        <option value="7" {%- if papertype == '7' -%}  selected="selected" {% endif %}>Case Study</option>
+                        <option value="8" {%- if papertype == '8' -%}  selected="selected" {% endif %}>Annotated Bibliography</option>
+                        <option value="9" {%- if papertype == '9' -%}  selected="selected" {% endif %}>Article</option>
+                        <option value="10" {%- if papertype == '10' -%}  selected="selected" {% endif %}>Assignment</option>
+                        <option value="11" {%- if papertype == '11' -%}  selected="selected" {% endif %}>Dissertation</option>
+                        <option value="12" {%- if papertype == '12' -%}  selected="selected" {% endif %}>Lab Report</option>
+                        <option value="13" {%- if papertype == '13' -%}  selected="selected" {% endif %}>Math Problem</option>
+                        <option value="14" {%- if papertype == '14' -%}  selected="selected" {% endif %}>Presentations</option>
+                        <option value="15" {%- if papertype == '15' -%}  selected="selected" {% endif %}>Speech</option>
+                        <option value="16" {%- if papertype == '16' -%}  selected="selected" {% endif %}>Statistics Report</option>
+                        <option value="17" {%- if papertype == '17' -%}  selected="selected" {% endif %}>Power Point Presentation</option>
+                    {%- else %}
+                        <option value="18">CV</option>
+                    {%- endif %}
+                    </select>
+                    {%- if cv != '1' %}
+                        <input type="hidden" value="18" name="paperType">
+                    {%- endif %}
+                </div>
+                    <div class="inline-input-container col-md-6 col-xs-12" style="margin-bottom: 0; position: relative;">
+                    <div class="inline-input-item inLine input-part input-files input_b double-inline">
+                        <div class="order-header">
+                            Materials <i class="glyphicon glyphicon-question-sign info_label" aria-hidden="true" data-original-title="You can upload additional instructions, readings, list of sources to be used or any other information that might be useful for the writer to complete your order appropriately."></i>
+                        </div>
+                        <input type="file" id="upload_file" class="" accept=".txt,.zip,.doc,.docx,.xls,.xlsx,.rtf,.jpeg,.png,.gif,.ppt,.pptx,.csv,.pdf,.jpg,.odt">
+                        <label for="file" class="l_none"><span class="file-span"><img class="img-responsive" src="/static/img/load.png" alt=""></span></label>
+                        <ul style="display: none;" id="tmp-file-list">
+                            <li>
+                                /:file_name:/
+                                <span class="close-file glyphicon glyphicon-remove" data-id="/:id:/" style="cursor: pointer; position: relative; top: 2px;color: red!important;"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="inline-input-item calendar double-inline" style="margin-top: 0;">
+                        <div class="order-header" style="font-size: 13px;">
+                            Deadline&nbsp;
+                            {%- if cv -%}
+                                <i class="glyphicon glyphicon-question-sign info_label" aria-hidden="true" data-original-title="The deadline starts from the moment you get a confirmation email that your payment was successfully received. When choosing the deadline, kindly consider that it takes 1 hour to write 1 page of quality text."></i>
+                            {%- endif %}
+                        </div>
+                        <div class="order-input-with-button calendar__content switch-inline-input">
+                            <input type="text" value="{% if deadline %}{{deadline}}{% elif cv != '1' %}2{% endif %}" name="deadlineDate" id="deadlineDate" {%- if cv != '1' -%} readonly {%- endif %} class="scan-input calendar__input">
+                            {%- if cv != '1' %}
+                                <input type="hidden" name="deadlineDate" id="hidden-date">
+                            {%- endif %}
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul id="list-files" style="display: block;" class="list-unstyled"></ul>
+                    </div>
+                </div>
+                {% if cv %}
+                    <div class="order-select">
+                        Subject <i class="glyphicon glyphicon-question-sign info_label" aria-hidden="true" data-original-title="Select the most suitable subject for your paper. If the necessary subject is not listed, contact us via the live support chat and we will help you choose."></i>
+                        <select name="subject" class="select-main" id="subject" data-dropup-auto="false" data-size="12" data-live-search="true" data-live-search-placeholder="Enter the first letters of the subject">
+                            <option value="44">Agriculture</option>
+                            <option value="27">Anthropology</option>
+                            <option value="28">Archeology</option>
+                            <option value="45">Architecture</option>
+                            <option value="36">Astronomy</option>
+                            <option value="1">Biology and Life Sciences</option>
+                            <option value="2">Business and Management</option>
+                            <option value="3">Chemistry</option>
+                            <option value="41">Computer sciences and Information technology</option>
+                            <option value="4">Culture</option>
+                            <option value="46">Design and Technology</option>
+                            <option value="38">Earth and Space sciences</option>
+                            <option value="53">E-commerce</option>
+                            <option value="5">Economics</option>
+                            <option value="6">Education</option>
+                            <option value="47">Engineering and Construction</option>
+                            <option value="7">English</option>
+                            <option value="8">Environmental Science</option>
+                            <option value="29">Ethics</option>
+                            <option value="49">Family and consumer science</option>
+                            <option value="9">Finance, Accounting and Banking</option>
+                            <option value="33">Gender &amp; Sexual Studies</option>
+                            <option value="10">Geography</option>
+                            <option value="50">Health sciences and medicine</option>
+                            <option value="12">History and Anthropology</option>
+                            <option value="13">HRM</option>
+                            <option value="34">Human Resources (HR)</option>
+                            <option value="14">International Relations</option>
+                            <option value="15">IT</option>
+                            <option value="35">Journalism, mass media and communication</option>
+                            <option value="16">Law and International Law</option>
+                            <option value="17">Linguistics</option>
+                            <option value="18">Literature</option>
+                            <option value="42">Logic and programming</option>
+                            <option value="55">Logistics</option>
+                            <option value="56">Macro &amp; Micro economics</option>
+                            <option value="57">Management</option>
+                            <option value="19">Marketing and PR</option>
+                            <option value="39">Mathematics</option>
+                            <option value="40">Microbiology</option>
+                            <option value="51">Military sciences</option>
+                            <option value="30">Music</option>
+                            <option value="21">Philosophy</option>
+                            <option value="22">Physics</option>
+                            <option value="23">Political Science</option>
+                            <option value="24">Psychology</option>
+                            <option value="31">Religion and Theology</option>
+                            <option value="25">Sociology</option>
+                            <option value="26">Statistics</option>
+                            <option value="43">Systems science</option>
+                            <option value="58">Tourism</option>
+                            <option value="32">Visual Arts and Film Studies</option>
+                        </select>
+                    </div>
+                {% else %}
+                    <input type="hidden" value="7" name="subject">
+                {% endif %}
+
+                <div class="order-comment">
+                    <div class="icon-hover">
+                        <label for="topic" class="control-label control-label-required">
+                            Title
+                            <i class="glyphicon glyphicon-question-sign info_label" aria-hidden="true" data-original-title="This is the topic of your paper. It must be short and clear. Alternatively, you can type in “Writer's choice“."></i>
+                        </label>
+                        <input class="scan-input" style="padding-right: 10px;" type="text" name="topic" id="topic" required value="{% if quote %}{{quote}}{% endif %}">
+
+                    </div>
+                    <label for="paperDetails" class="control-label control-label-required">
+                        Paper details
+                        <i class="glyphicon glyphicon-question-sign info_label" aria-hidden="true" data-original-title="To ensure that the final paper meets your requirements, make sure that your instructions are as accurate and detailed as possible. This will decrease the chance of revisions."></i>
+                    </label>
+                    <textarea name="paperDetails" id="paperDetails" required class="scan-input"></textarea>
+                </div>
+            </div>
+            <div class="order-right-col clearfix">
+                <div class="col-sm-6 col-md-6 black-block">
+                    <div class="order-info info_label"  aria-hidden="true" data-deadline>
+                        Please, select a date
+                    </div>
+                    <div class="line">YOU ORDER SHOULD BE READY</div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                <div class="total-price-con" data-total-price>
+                    <span id="total-price">15.00</span>
+                </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-md-offset-6 discount-block">
+                    <div class="inline-input-container discount-cont">
+                    {% if cv %}
+                        <div class="inline-input-item">
+                            <div class="order-header">
+                                Discount <i class="glyphicon glyphicon-question-sign info_label" aria-hidden="true" data-original-title="Insert your personal discount code (if you have one) in the field and press “APPLY” button."></i>
+                            </div>
+                            <div class="order-input-with-button active switch-inline-input">
+                                <input type="text" maxlength="15" placeholder="Select discount code" name="discount" id="discount" class="scan-input">
+                                <button class="inline-button icon-3 default-inline-button inline-button icons-3" id="appdicount"> apply</button>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                </div>
+                {% if session.logged_in %}
+                    <button class="send-order-form">Check out now!</button>
+                    </div>
+                {% endif %}
+                <input type="hidden" name="xdiscountcode">
+                <input type="hidden" name="xhoures" id="xhoures" value="0">
+            </div>
+        </form>
+        <div class="order-right-col tabbed-block">
+            {% if not session.logged_in %}
+            <div class="tab-customer">
+            <ul class="nav nav-tabs tab-customer-header" role="tablist">
+                <li role="presentation" class="active customer-item">
+                    <a href="#price1" class="nav-tabs__link" role="tab" data-toggle="tab" aria-expanded="true"> I am a new customer</a>
+                </li>
+                <li role="presentation" class="customer-item">
+                    <a href="#price2" class="nav-tabs__link" role="tab" data-toggle="tab" aria-expanded="false"> I have an account </a>
+                </li>
+            </ul>
+            <div class="tab-content ">
+                <div role="tabpanel" class="tab-pane fade active in form-horizontal form-auth" id="price1">
+                    <div class="tab-customer-body" style="overflow-x: visible;">
+                        <div class="tab-customer-body-item act-body">
+                            <label>
+                                First Name
+                                <input type="text" name="fname" maxlength="45" id="fname" placeholder="Enter your first name">
+                            </label>
+                             <label>
+                                Last Name
+                                <input type="text" name="lname" maxlength="45" id="lname" placeholder="Enter your last name">
+                            </label>
+                            <label>
+                                Email <i class="glyphicon glyphicon-question-sign info_label info_label_reg" aria-hidden="true" data-original-title="Enter a valid email address, your order will be delivered to this email."></i>
+                                <input type="email" name="email" autocomplete="off"  id="email" placeholder="example@example.com" >
+                            </label>
+                            <label>
+                                Phone
+                                <input type="text" name="phone" data-validation-length="10-14" data-validation="number" minlength="10" maxlength="14" id="phone_numb" placeholder="Enter your phone">
+                            </label>
+                            <label>
+                                Password <i class="glyphicon glyphicon-question-sign info_label info_label_reg" aria-hidden="true" data-original-title="Create a secure and memorable password for your account. Use at least 6 characters."></i>
+                                <input type="password" autocomplete="off" class="form-control" name="password" id="password" placeholder="Create password">
+                            </label>
+                            <label>
+                                Repeat password <i class="glyphicon glyphicon-question-sign info_label info_label_reg" aria-hidden="true" data-original-title="Confirm your password."></i>
+                                <input type="password" class="form-control" autocomplete="off" name="cpassword" id="cpassword" placeholder="Confirm password">
+                            </label>
+                            <label class="accept-label">
+                              <input type="checkbox" name="accept_chb" id="accept_chb" value="1" checked="true">
+                              I accept the <a href="/privacy-policy" target="_blank">Terms of Use</a> and <a href="/terms-and-conditions" target="_blank">Privacy and Cookies Policy</a>.
+                            </label>
+                        </div>
+                    </div>
+                    <button class="send-order-form hide" id="ordermodal1" onclick="aregistration()">Check out now!</button>
+                    <button class="send-order-form" id="ordermodal2" onclick="aregistration()">Check out now!</button>
+                    <div class="preload-order"><img src="static/img/preloader.gif" alt=""></div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade form-horizontal form-auth" id="price2">
+                    <div class="tab-customer-body" style="overflow-x: visible;">
+                        <label>
+                            Email
+                            <input type="email" class="form-control" name="lemail" id="lemail" placeholder="Enter your email">
+                        </label>
+                        <label>
+                            Password
+                            <input type="password" class="form-control" name="lpassword" id="lpassword" placeholder="Enter your password">
+                        </label>
+                    </div>
+                    <button class="send-order-form" onclick="alogin()">Check out now!</button>
+                    <div class="preload-order"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+               </div>
+</section>
+
+{% include "loginform.html" %}
+
+{% include "ordermodal.html" %}
+    <style>
+        .preload-order{
+            width: 20px;
+            height: 20px;
+            display: none;
+            margin-left: 10px;
+        }
+        .preload-order img{
+            width: 100%;
+            height: 100%;
+        }
+        #order-form .send-order-form{
+            display: inline-block;
+            max-width: 228px;
+            margin-left: 0!important;
+        }
+    </style>
+    <script src="static/js/jquery.carouselHeight.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/legacy.min.js"></script>
+    <script src="static/js/custombox.min.js"></script>
+    <script src="static/js/bootstrap-select.js"></script>
+    <script>
+    function getnextweekdate() {
+        return moment().add('days', 7).format('YYYY-MM-DD');
+    }
+    console.log()
+        if( $('#deadlineDate').val() ) {
+            if( $('#deadlineDate').val().length > 2 ) {
+                $('#deadlineDate, #hidden-date').val( moment($('#deadlineDate').val(getnextweekdate())).format("YYYY-MM-DD") );
+
+
+            }else{
+                $('#deadlineDate, #hidden-date').val( moment().add($('#deadlineDate').val(getnextweekdate()), 'days').format("YYYY-MM-DD") );
+            }
+
+        }else{
+            $('#deadlineDate, #hidden-date').val( moment().add(1, 'days').format("YYYY-MM-DD") );
+        }
+        $('#deadlineDate').on('change', function() {
+            $('#hidden-date').val($(this).val(getnextweekdate()));
+        });
+    </script>
+    <script src="static/js/bootstrap-datetimepicker.js"></script>
+    <script src="static/js/jquery.form.js"></script>
+    <script src="static/js/url.min.js"></script>
+    <script src="static/js/calc.js"></script>
+    <script src="static/js/order_scripts.js"></script>
+    <script src="static/js/app.js"></script>
+    <script src="static/js/jquery.form-validator.min.js"></script>
+    <script src="static/js/utils.js"></script>
+
+<script type="text/javascript">
+var isMobile = {
+        Android: function(){
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function(){
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function(){
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function(){
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function(){
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function(){
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+$(function() {
+    $('#deadlineDate').trigger( "change" );
+
+    $('#phone_numb').on('keyup', function(event) {
+        var str = $(this).val(),
+            reg = /[^0-9]/g;
+        str = str.replace(reg, '');
+        $(this).val('+'+str);
+    });
+
+    $field_title =[{{add_def_placeholder_title|safe}}];
+    $field_paper_detail =[{{add_def_placeholder_paper_details|safe}}];
+
+    $("#topic").attr("placeholder", GetDefPlaceholder($field_title));
+    $("#paperDetails").attr("placeholder", GetDefPlaceholder($field_paper_detail));
+
+    $('select[name="workType"]').change(function(){
+
+    });
+
+    $("[data-pagesCount]").html(300 * $("#pages").val() + " words");
+
+    runCalc(calcData, totalPrice);
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    if(!isMobile.any()){
+        $(".select-main").selectpicker({
+            select : function(event, ui) {
+                $(this).trigger('change');
+            }
+        });
+    }
+
+    $(".select-main").trigger('change');
+
+    $.validate({
+        modules : 'security'
+    });
+});
+</script>
+
+<script type="text/javascript">
+    // Numeric only control handler
+    jQuery.fn.ForceNumericOnly =
+    function()
+    {
+        return this.each(function()
+        {
+            $(this).keydown(function(e)
+            {
+                var key = e.charCode || e.keyCode || 0;
+                // allow backspace, tab, delete, enter, arrows, numbers and keypad numbers ONLY
+                // home, end, period, and numpad decimal
+                return (
+                    key == 8 ||
+                    key == 9 ||
+                    key == 13 ||
+                    key == 46 ||
+                    key == 110 ||
+                    key == 190 ||
+                    (key >= 35 && key <= 40) ||
+                    (key >= 48 && key <= 57) ||
+                    (key >= 96 && key <= 105));
+            });
+        });
+    };
+</script>
+<script>
+    $(document).ready( function(){
+        $('#subform').submit(function(e) {
+            e.preventDefault();
+
+            var file_name_param = $('#upload_file').attr('name'),
+                form_data = new FormData($(this)[0]);
+
+
+            for(var key in upload_file){
+                form_data.append('file[]', upload_file[key], upload_file[key]['name'] );
+            }
+
+
+
+            $.ajax({
+            url: $(this).attr('action'),
+            type: $(this).attr('method'),
+            contentType: false,
+            processData: false,
+            enctype: $(this).attr('enctype'),
+            data: form_data,
+            success: function(data){
+                if(data) {
+                    location.pathname = '/dashboard';
+                }
+            }
+        });
+
+
+            if (validate_topic()) {
+                  if (validate_decription()) {
+                      $('.ordermodal').prop('disabled','true');
+                      $('i.glyphicon.glyphicon-refresh.glyphicon-spin').removeClass('hide');
+                      return true;
+                  }
+                  else {
+                      ExampleWarning.show("Please fill in the <b>Paper details</b> field.");
+                      return false;
+                  }
+            } else {
+                  ExampleWarning.show("Please fill in the <b>Title</b> field or type in “Writer’s choice” so that our writer would choose an appropriate <b>Title</b> for your paper.");
+                  return false;
+            }
+        });
+    });
+</script>
+</html>

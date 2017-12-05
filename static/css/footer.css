@@ -1,0 +1,168 @@
+footer {
+	text-align: center;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: inherit;
+	-o-background-attachment: inherit;
+	-webkit-background-attachment: inherit;
+	-moz-background-attachment: inherit;
+	-ms-background-attachment: inherit;
+	-icab-background-attachment: inherit;
+	background-size: cover;
+	background-image: url(../img/footer-bg.png);
+	position: relative;
+	z-index: 50;
+	padding-bottom: 100px;
+}
+.footer-top {
+	background-color: rgba(255,255,255,0.6);
+}
+footer ul li {
+	display: inline-block;
+}
+footer ul {
+	padding: 0;
+	margin: 5px 0;
+}
+
+.foot-nav li {
+	border-right: 1px solid rgba(210,210,210,0.9);
+	width: 160px;
+	text-align: center;
+	padding: 10px 0;
+	font-weight: bold;
+}
+.foot-nav li a {
+	color: #585858;
+}
+
+.foot-pay {
+	overflow: hidden;
+	margin-top: 100px;
+	padding: 0;
+}
+.foot-pay ul {
+	padding: 0;
+	margin: 0;
+}
+.foot-pay ul li{
+	display: inline-block;
+	width: 25%;
+	text-align: center;
+	float: left;
+}
+.foot-pay ul li img {
+	display: inline-block;
+}
+
+@media screen and (max-width:1200px) {
+	footer {
+		padding-bottom: 80px;
+	}
+	.foot-pay {
+		overflow: hidden;
+		margin-top: 80px;
+		padding: 0 20px;
+	}
+	.foot-pay ul li img{
+		display: block;
+		width: 50%;
+		text-align: left;
+		float: left;
+		height: 36px;
+		margin-left: 20%;
+	}
+}
+
+
+@media screen and (max-width:992px) {
+	footer {
+		padding-bottom: 60px;
+	}
+	.foot-pay ul li img{
+		height: 29px;
+	}
+	.foot-nav li {
+		width: 24.5%;
+	}
+	.foot-nav li:last-child {
+		border-right: 0;
+	}
+	.foot-nav li a {
+		font-size: 12pt;
+	}
+	.foot-pay {
+		margin-top: 60px;
+	}
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+	.foot-pay ul li{
+		text-align: center;
+	}
+	.foot-pay ul li img{
+		display: block;
+		width: 50%;
+		text-align: left;
+		float: left;
+		height: 30px;
+		margin-left: 20%;
+	}
+	footer ul {
+		margin: 0;
+		padding: 0;
+	}
+	.foot-nav li {
+		width: 24%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	footer {
+		padding-bottom: 45px;
+	}
+	.foot-pay ul li img{
+		height: 25px;
+		width: 60%;
+	}
+	.foot-nav li a {
+		font-size: 11pt;
+	}
+	.foot-nav li {
+		border: 0;
+	}
+
+	.foot-pay {
+		margin-top: 45px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.foot-pay ul li img{
+		height: 18px;
+		width: 60%;
+	}
+	.foot-nav li a {
+		font-size: 10pt;
+	}
+}
+
+
+@media screen and (max-width: 400px) {
+	.foot-pay ul li img{
+		height: 15px;
+		width: 60%;
+	}
+}
+@media screen and (max-width: 350px) {
+	.foot-pay ul li img{
+		height: 13px;
+		width: 60%;
+	}
+	.foot-nav li  {
+		width: 23%;
+	}
+}

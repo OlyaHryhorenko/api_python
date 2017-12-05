@@ -1,0 +1,429 @@
+
+
+@media screen and (max-width:1200px) {
+	.four-parts h2 {
+		width: 70%;
+	}
+	.four-parts h4 {
+		font-size: 12pt;
+		width: 70%;
+		margin: 20px auto;
+	}
+}
+
+@media screen and (max-width:1024px) {
+	.logo-cont {
+		width: 85%;
+	}
+	.logo-mid {
+		/*margin: 80px auto;*/
+		width: 45%;
+	}
+	.logo-text p {
+		font-size: 19px;
+		padding: 5px 80px;
+	}
+	a#ord-link {
+		font-size: 12pt;
+		padding: 10px 40px;
+		margin-top: 25px;
+	}
+
+	 .fifth-screen h1 {
+	 	font-size: 50pt;
+	 }
+	 .fifth-screen h3 {
+	 	font-size: 25pt;
+	 }
+	 .fifth-screen h4 {
+	 	font-size: 16pt;
+	 }
+	 .fifth-cont h5 {
+	 	font-size: 12pt;
+	 }
+	 .fifth-cont img {
+	 	display: block;
+	 	width: 170px;
+	 	height: 170px;
+	 	margin: 0 auto;
+	 }
+	 .fifth-cont img.sloy-two {
+	 	width: 50%;
+	 	height: auto;
+	 	margin-bottom:40px;
+	 }
+}
+
+@media screen and (max-width:992px) {
+
+	.logo-cont p {
+		padding: 5px 50px;
+	}
+	 .sec-scr-text {
+ 		padding: 0 30px;
+ }
+
+ 	.sec-scr-text h1{
+		padding: 20px;
+		font-size: 21pt;
+ 	}
+
+  .sec-scr-text p {
+  	font-size: 12pt;
+  }
+
+  .third-cont h2 {
+		width: 80%;
+		font-size: 15pt;
+	}
+	.third-cont h4 {
+		font-family: Arial;
+		padding: 0 10px;
+	}
+	.third-cont img {
+		margin: 15px;
+	}
+	
+	.third-cont img {
+		width: 25px;
+		height: 25px;
+	}
+	.four-parts h2 {
+		font-size: 16pt;
+		width: 80%;
+	}
+	.four-parts h4 {
+		font-size: 12pt;
+		width: 75%;
+		margin: 20px auto;
+	}
+
+	.four-parts a {
+		font-size: 16pt;
+		padding: 10px 30px;
+		margin-top: 20px;
+	}
+	.fifth-parts {
+		padding: 10px;
+	}
+
+}
+
+@media screen and (max-width:767px) {
+	.after-header {
+		padding: 50px 10px;
+	}
+	.logo-mid {
+		/*margin: 60px auto;*/
+		width: 55%;
+	}
+	.logo-text p {
+		font-size: 16px;
+		padding: 5px 40px;
+	}
+	a#ord-link {
+		font-size: 10pt;
+		padding: 8px 30px;
+		margin-top: 15px;
+	}
+	 .sec-scr-text {
+			padding: 0 90px;
+	}
+
+	.sec-scr-text h1{
+		padding: 10px;
+		font-size: 18pt;
+	}
+
+	 .sec-scr-text p {
+	 	font-size: 12pt;
+	 }
+	 .third-cont {
+	 	padding: 50px 0;
+	 }
+	 .third-cont h2{
+		width: 50%;
+		margin: 0 auto;
+	 }
+	 .third-cont h4 {
+	 	width: 50%;
+	 	margin: 10px auto;
+	 }
+	 
+	.four-parts {
+		padding: 30px 0;
+	}
+	 .four-parts h2 {
+		font-size: 15pt;
+		width: 40%;
+	}
+	.four-parts h4 {
+		font-size: 12pt;
+		width: 70%;
+		margin: 20px auto;
+	}
+
+	.four-parts a {
+		font-size: 15pt;
+		padding: 8px 25px;
+		margin-top: 20px;
+	}
+	.fifth-screen h1 {
+ 	font-size: 40pt;
+ }
+ .fifth-screen h3 {
+ 	font-size: 20pt;
+ 	margin-top: -15px;
+ }
+ .fifth-screen h4 {
+ 	font-size: 15pt;
+ }
+ .fifth-cont h5 {
+ 	font-size: 11pt;
+ 	width: 60%;
+ 	margin: 0 auto 30px auto;
+ }
+}
+
+@media screen and (max-width:550px) {
+	.after-header {
+		padding: 30px 10px;
+	}
+	.logo-cont {
+		padding: 70px 0;
+	}
+	.logo-mid {
+		margin: 40px auto;
+	}
+	.logo-text p {
+		font-size: 14px;
+		padding: 5px 50px;
+	}
+	a#ord-link {
+		font-size: 8pt;
+		padding: 8px 30px;
+		margin-top: 5px;
+	}
+	 .social-right li {
+	 	margin: 10px;
+	 }
+		 .sec-scr-text {
+	 		padding: 0 50px;
+	 }
+	
+	 .sec-scr-text h1{
+		font-size: 16pt;
+	 }
+	
+	  .sec-scr-text p {
+	  	font-size: 10pt;
+  }
+
+	 .third-cont h4 {
+	 	width: 70%;
+	 }
+	 .fifth-screen h1 {
+ 	font-size: 30pt;
+ }
+ .fifth-screen h3 {
+ 	font-size: 13pt;
+ 	margin-top: -10px;
+ }
+ .fifth-screen h4 {
+ 	font-size: 14pt;
+ }
+ .fifth-cont h5 {
+ 	font-size: 11pt;
+ 	width: 70%;
+ 	margin: 0 auto 30px auto;
+ }
+ .fifth-parts img {
+ 	width: 140px;
+ 	height: 140px;
+ }
+}
+
+@media screen and (max-width:480px) {
+	.logo-mid {
+		margin: 20px 0;
+	}
+	.logo-text p {
+		font-size: 12px;
+		padding: 5px 30px;
+	}
+	a#ord-link {
+		font-size: 7pt;
+		padding: 5px 20px;
+		margin-top: 5px;
+	}
+	.third-cont img {
+		height: 20px;
+		width: 20px;
+	}
+	 .four-parts {
+		padding: 10px 0;
+	}
+	 .four-parts h2 {
+		font-size: 14pt;
+		width: 60%;
+	}
+	.four-parts h4 {
+		font-size: 11pt;
+		width: 80%;
+		margin: 20px auto;
+	}
+
+	.four-parts a {
+		font-size: 12pt;
+		padding: 7px 20px;
+		margin-top: 10px;
+	}
+	#type-button, #level-button {
+		height: 35px;
+		padding-top: 10px;
+	}
+	.ord-main-part select, .ord-main-part input {
+		height: 35px;
+	}
+	span.plus, span.minus, i.date {
+		height: 35px;
+		width: 35px;
+	}
+	span.minus img {
+		margin-top: 15px;
+	}
+	span.plus img {
+		margin-top: 10px;
+	}
+	i.date img {
+		margin-top: 2px;
+	}
+}	
+
+@media screen and (max-width:400px) {
+	.logo-text p {
+		font-size: 10px;
+		padding: 5px 20px;
+	}
+	.after-header {
+		padding: 20px 10px;
+	}
+	 .sec-scr-text {
+ 		padding: 0 20px;
+	}
+
+	.sec-scr-text h1{
+		font-size: 12pt;
+	}
+
+	 .sec-scr-text p {
+	 	font-size: 9pt;
+	 }
+	  .fifth-screen h1 {
+ 		font-size: 25pt;
+ 	}
+ 	.fifth-screen h3 {
+ 		font-size: 12pt;
+ 		margin-top: -10px;
+ 	}
+ 	.fifth-screen h4 {
+ 		font-size: 11pt;
+ 	}
+}
+
+
+@media screen and (max-width:740px) {
+
+	.ord-main-part,
+	.ord-main-part:last-child {
+		width: 60%;
+		margin-bottom: 40px;
+	}
+
+	.continue {
+		width: 50%;
+	}
+	.continue span {
+		font-size: 32pt;
+		padding-bottom: 12px;
+	}
+	.continue a {
+		font-size: 17pt;
+		padding: 20px;
+}
+	.ord-main-part p {
+	margin-bottom: 10px;
+}
+
+}
+
+
+
+@media screen and (max-width:580px) {
+	
+	.ord-main-part,
+	.ord-main-part:last-child {
+		margin-bottom: 20px;
+	}
+
+	.ord-main-part label {
+		font-size: 12pt;
+		padding: 5px;
+	}
+	#type-button,
+	#level-button {
+		font-size: 10pt;
+	}
+	.ord-main-part select,
+	.ord-main-part input {
+		font-size: 10pt;
+	}
+	.continue p {
+		margin: 5px;
+		font-size: 11pt;
+	}
+	.continue span {
+		font-size: 24pt;
+		padding-bottom: 10px;
+	}
+	.continue a {
+		font-size: 12pt;
+		padding: 10px;
+	}
+		.third-screen h3 {
+		font-size: 15pt;
+	}
+	.third-screen h5 {
+		font-size: 9pt;
+	}
+
+	.scnd-cont .text-field,
+	.thrd-cont .text-field {
+		width: 200px;
+	}
+	.scnd-cont .text-field a,
+	.thrd-cont .text-field a {
+		font-size: 8pt;
+		padding: 3px 15px;
+		margin-top: 20px;
+	}
+
+}
+
+
+
+
+@media screen and (max-width:480px) {
+
+	.third-parts {
+		width: 60%;
+		float: none;
+		margin: 10px auto;
+		text-align: center;
+	}
+	
+	.third-screen h3 {
+		font-size: 14pt;
+	}
+
+}
